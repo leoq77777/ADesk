@@ -2,6 +2,16 @@
 
 本地桌面应用：把 CLI agent 会话做成办公室里的员工。主路径是 **ACP**，本阶段不实现 `-p`。
 
+![Desk 办公室 Demo](docs/demo.png)
+
+每位员工占一个工位。点桌子打开聊天；忙碌的人会排队，「下班」后点 **恢复上班** 即可开新会话。
+
+```bash
+source "$HOME/.cargo/env"
+npm --prefix frontend run build
+cargo run -p desk-app
+```
+
 ## 使用
 
 1. `source "$HOME/.cargo/env" && npm --prefix frontend run build && cargo run -p desk-app`

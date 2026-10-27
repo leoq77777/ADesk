@@ -4,6 +4,7 @@ import { open } from "@tauri-apps/plugin-dialog";
 import { useEffect, useMemo, useRef, useState, type ClipboardEvent } from "react";
 import {
   api,
+  isDeskDemo,
   type Attachment,
   type Message,
   type ModelOption,
@@ -371,9 +372,14 @@ export function App() {
   }
 
   useEffect(() => {
-    refresh().catch((e) => {
-      if (!String(e).includes("invoke")) setErr(String(e));
-    });
+    refresh()
+      .then(() => {
+        if (isDeskDemo()) selectSession("s-ada");
+      })
+      .catch((e) => {
+        if (!String(e).includes("invoke")) setErr(String(e));
+      });
+    if (isDeskDemo()) return;
     const unsubs: Array<() => void> = [];
     listen<Snapshot>("desk://snapshot", (ev) => {
       snapRef.current = ev.payload;
