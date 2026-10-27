@@ -1,0 +1,30 @@
+{
+  "recorded_at": "2026-10-21T23:39:20Z",
+  "os": "Darwin",
+  "os_release": "25.4.0",
+  "arch": "arm64",
+  "python": "3.14.8",
+  "agent": {
+    "path": "~/.local/bin/agent",
+    "version": "2026.05.01-eea359f",
+    "status": {
+      "status": "authenticated",
+      "isAuthenticated": true,
+      "hasAccessToken": true,
+      "hasRefreshToken": true,
+      "userInfo": {
+        "userId": 168238391,
+        "email": "<email>"
+      }
+    }
+  },
+  "gemini": {
+    "path": null,
+    "installed": false
+  },
+  "note_other_cli": {
+    "claude": "/opt/homebrew/bin/claude",
+    "selected": false,
+    "reason": "不在开发方案候选列表（Gemini CLI / Cursor CLI）中，M0 不选用。"
+  }
+}

@@ -1,0 +1,9 @@
+[package]
+name = "desk-harness"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+desk-core = { path = "../desk-core" }
+tokio.workspace = true

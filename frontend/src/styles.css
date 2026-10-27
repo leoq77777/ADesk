@@ -1,0 +1,2254 @@
+:root {
+  --ink: #16100c;
+  --paper: #f6ead4;
+  --paper-dim: #cbb89d;
+  --paper-muted: #9a866f;
+  --floor: #65452b;
+  --plank: #7d5434;
+  --plank-dark: #4f3520;
+  --lamp: #f2b44b;
+  --lamp-bright: #ffd175;
+  --lamp-glow: rgba(242, 180, 75, 0.25);
+  --night: #1c130e;
+  --panel: #251a13;
+  --panel-elevated: #2f2118;
+  --panel-input: #17100b;
+  --line: #3d2b1f;
+  --line-bright: #5c412e;
+  --ok: #a8d88a;
+  --warn: #f0be63;
+  --bad: #e26d52;
+  --busy: #6fd4cc;
+  --radius-sm: 5px;
+  --radius-md: 8px;
+  --shadow-soft: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+html.paused * {
+  animation-play-state: paused !important;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  color: var(--paper);
+  background: var(--night);
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-synthesis: none;
+  -webkit-font-smoothing: antialiased;
+  user-select: none;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(246, 234, 212, 0.16);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(246, 234, 212, 0.28);
+}
+
+button,
+textarea,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  border: 1px solid var(--line-bright);
+  background: #36251b;
+  color: var(--paper);
+  border-radius: var(--radius-sm);
+  padding: 0.38rem 0.75rem;
+  font-size: 0.84rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.14s ease, border-color 0.14s ease, transform 0.08s ease, box-shadow 0.14s ease;
+}
+
+button:hover:not(:disabled) {
+  background: #483123;
+  border-color: #78553c;
+}
+
+button:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--lamp);
+  outline-offset: 1px;
+}
+
+button:disabled {
+  opacity: 0.48;
+  cursor: not-allowed;
+}
+
+button.primary {
+  background: linear-gradient(180deg, #f6be5e 0%, #e6a438 100%);
+  color: var(--ink);
+  border-color: #c98a27;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(242, 180, 75, 0.2);
+}
+
+button.primary:hover:not(:disabled) {
+  background: linear-gradient(180deg, #ffd87a 0%, #f0b148 100%);
+  border-color: #dda03a;
+}
+
+button.danger-outline {
+  border-color: rgba(226, 109, 82, 0.55);
+  color: #f49b86;
+  background: rgba(226, 109, 82, 0.1);
+}
+
+button.danger-outline:hover:not(:disabled) {
+  background: rgba(226, 109, 82, 0.22);
+  border-color: var(--bad);
+}
+
+button.on {
+  background: #553927;
+  border-color: var(--lamp);
+  box-shadow: inset 3px 0 0 var(--lamp);
+}
+
+.link-btn {
+  border: 0;
+  background: transparent;
+  color: var(--paper-dim);
+  padding: 0.1rem 0.35rem;
+  font-size: 0.72rem;
+}
+
+.link-btn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--lamp);
+}
+
+/* Main 3-Column Shell */
+.shell {
+  display: grid;
+  grid-template-columns: 248px 1fr 390px;
+  height: 100%;
+  overflow: hidden;
+}
+
+.shell.drop .office,
+.shell.drop .chat {
+  outline: 3px dashed var(--lamp);
+  outline-offset: -8px;
+}
+
+.rail,
+.chat {
+  background: var(--panel);
+  border-right: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.chat {
+  border-right: 0;
+  border-left: 1px solid var(--line);
+  background: linear-gradient(180deg, #271b14 0%, #211711 100%);
+}
+
+.rail-header,
+.chat-header,
+.office-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid var(--line);
+  background: rgba(24, 16, 11, 0.35);
+  min-height: 58px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.brand-junimo {
+  width: 24px;
+  height: 24px;
+  background-image: url("/stardew/junimo.png");
+  background-size: 192px 192px;
+  background-position: 0 0;
+  image-rendering: pixelated;
+  display: inline-block;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+  animation: junimo-hop 0.8s steps(4) infinite;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+h1 {
+  font-size: 1.25rem;
+}
+
+h2 {
+  font-size: 0.96rem;
+}
+
+.provider,
+small,
+.hint {
+  font-family: ui-monospace, "SF Mono", Menlo, Monaco, monospace;
+  font-size: 0.72rem;
+  color: var(--paper-dim);
+}
+
+.provider {
+  background: rgba(242, 180, 75, 0.12);
+  color: var(--lamp-bright);
+  border: 1px solid rgba(242, 180, 75, 0.32);
+  border-radius: 999px;
+  padding: 0.15rem 0.55rem;
+  font-weight: 600;
+}
+
+/* Left Rail Sections */
+.rail {
+  padding-bottom: 0.75rem;
+  gap: 0.25rem;
+  overflow-y: auto;
+}
+
+.rail-section {
+  display: flex;
+  flex-direction: column;
+  padding: 0.65rem 0.85rem 0.35rem;
+  border-bottom: 1px solid rgba(61, 43, 31, 0.65);
+}
+
+.rail-section.notices-section {
+  border-bottom: 0;
+  flex: 1;
+  min-height: 120px;
+}
+
+.sec-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.sec-head h2 {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--paper-dim);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.sec-meta {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 0.7rem;
+  color: var(--paper-muted);
+}
+
+.badge-count {
+  background: var(--lamp);
+  color: var(--ink);
+  font-weight: 700;
+  padding: 0.05rem 0.4rem;
+  border-radius: 999px;
+  font-size: 0.68rem;
+}
+
+.probe-btn,
+.team-add-btn {
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+.probes {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  max-height: 11.5rem;
+  overflow-y: auto;
+}
+
+.probes li {
+  background: rgba(20, 13, 9, 0.45);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 0.45rem 0.6rem;
+}
+
+.probe-row {
+  display: flex;
+  align-items: center;
+  gap: 0.42rem;
+  margin-bottom: 0.15rem;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--paper-muted);
+  flex: none;
+}
+
+.probes .ok .status-dot {
+  background: var(--ok);
+  box-shadow: 0 0 6px rgba(168, 216, 138, 0.6);
+}
+
+.probes .bad .status-dot {
+  background: var(--bad);
+}
+
+.probes b {
+  font-size: 0.82rem;
+}
+
+.probes .ok b {
+  color: var(--ok);
+}
+
+.probes .bad b {
+  color: #f0937c;
+}
+
+.probes small {
+  display: block;
+  line-height: 1.35;
+  word-break: break-word;
+}
+
+.probes button {
+  width: auto;
+  margin: 0.4rem 0 0;
+  padding: 0.2rem 0.55rem;
+  font-size: 0.73rem;
+}
+
+.teams,
+.notices {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.teams {
+  max-height: 9.5rem;
+}
+
+.notices {
+  flex: 1;
+  min-height: 0;
+}
+
+.teams button {
+  width: 100%;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.42rem 0.65rem;
+}
+
+.team-badges {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.team-busy-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--busy);
+  box-shadow: 0 0 6px var(--busy);
+}
+
+.team-count {
+  background: rgba(255, 255, 255, 0.07);
+  padding: 0.05rem 0.38rem;
+  border-radius: 999px;
+  font-size: 0.68rem;
+}
+
+.notices button {
+  width: 100%;
+  text-align: left;
+  padding: 0.45rem 0.6rem;
+  background: rgba(22, 15, 10, 0.55);
+}
+
+.notices b {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.notice-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.2rem;
+}
+
+.notice-who {
+  color: var(--lamp-bright);
+}
+
+.unread button {
+  box-shadow: inset 3px 0 0 var(--lamp);
+  background: rgba(242, 180, 75, 0.08);
+}
+
+.kind-approval.unread button {
+  box-shadow: inset 3px 0 0 var(--lamp);
+  border-color: rgba(242, 180, 75, 0.45);
+}
+
+.kind-error.unread button,
+.kind-away.unread button {
+  box-shadow: inset 3px 0 0 var(--bad);
+  border-color: rgba(226, 109, 82, 0.45);
+}
+
+.resume {
+  margin: 0.5rem 0.85rem 0;
+  background: var(--warn);
+  color: var(--ink);
+  border-color: #c48a2b;
+  font-weight: 600;
+}
+
+/* Center Office Room */
+.office {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  background: #221710;
+}
+
+.office-title-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 0;
+  flex-wrap: wrap;
+}
+
+.office-pills {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.stat-pill {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 0.7rem;
+  padding: 0.14rem 0.5rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  color: var(--paper-dim);
+}
+
+.stat-pill.busy {
+  color: var(--busy);
+  border-color: rgba(111, 212, 204, 0.35);
+  background: rgba(111, 212, 204, 0.1);
+}
+
+.stat-pill.warn {
+  color: var(--lamp-bright);
+  border-color: rgba(242, 180, 75, 0.45);
+  background: rgba(242, 180, 75, 0.14);
+}
+
+.office-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.filter-tabs {
+  display: inline-flex;
+  background: #1a120c;
+  padding: 2px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line);
+}
+
+.filter-tabs button {
+  border: 0;
+  background: transparent;
+  padding: 0.22rem 0.55rem;
+  font-size: 0.75rem;
+  color: var(--paper-dim);
+  box-shadow: none;
+}
+
+.filter-tabs button.on {
+  background: #3e2a1e;
+  color: var(--paper);
+  box-shadow: none;
+}
+
+.room {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  background:
+    radial-gradient(circle at 50% 25%, rgba(242, 180, 75, 0.09), transparent 65%),
+    linear-gradient(90deg, #0000 31px, rgba(0, 0, 0, 0.16) 32px),
+    linear-gradient(#0000 31px, rgba(0, 0, 0, 0.16) 32px),
+    repeating-linear-gradient(
+      90deg,
+      var(--floor) 0,
+      var(--floor) 31px,
+      var(--plank) 31px,
+      var(--plank) 32px
+    );
+  background-size: 100% 100%, 32px 32px, 32px 32px, 32px 32px;
+}
+
+/* Pixel Studio Wall */
+.wall {
+  height: 64px;
+  flex: none;
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, transparent 30%),
+    repeating-linear-gradient(90deg, #3c2719 0 24px, #472e1e 24px 48px);
+  border-bottom: 5px solid #26160e;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+  position: relative;
+}
+
+.pane,
+.board,
+.shelf,
+.plant,
+.robin-builder {
+  position: absolute;
+  display: block;
+  image-rendering: pixelated;
+}
+
+.pane {
+  left: 36px;
+  top: 12px;
+  width: 64px;
+  height: 36px;
+  background: linear-gradient(180deg, #9be2de 0%, #6cbab5 100%);
+  box-shadow:
+    inset 30px 0 0 rgba(255, 255, 255, 0.18),
+    inset 0 -4px 0 #4d8a86,
+    0 0 0 3px #25150d,
+    0 4px 14px rgba(126, 200, 195, 0.22);
+}
+
+.pane-right {
+  left: 118px;
+}
+
+.board {
+  left: 220px;
+  top: 14px;
+  width: 84px;
+  height: 32px;
+  background: #e8dec8;
+  box-shadow:
+    inset 0 -3px 0 #c4b497,
+    0 0 0 3px #2c1b11;
+}
+
+/* Stardew Robin hammering at the wall */
+.robin-builder {
+  right: 200px;
+  bottom: 0;
+  width: 42px;
+  height: 63px;
+  background-image: url("/stardew/robin_work.png");
+  background-size: 210px 63px;
+  background-position: -42px 0;
+  animation: sv-robin-hammer 0.9s steps(3) infinite;
+}
+
+.shelf {
+  right: 105px;
+  top: 18px;
+  width: 72px;
+  height: 10px;
+  background: #6d472b;
+  box-shadow:
+    0 4px 0 #26160e,
+    8px -8px 0 0 #d36b4c,
+    22px -10px 0 0 #7ec8c3,
+    38px -7px 0 0 #f0b14a;
+}
+
+.plant {
+  right: 36px;
+  top: 18px;
+  width: 14px;
+  height: 26px;
+  background: #487d44;
+  box-shadow:
+    8px 4px 0 #355e32,
+    -6px 6px 0 #5b9656,
+    0 16px 0 2px #9c5533;
+}
+
+.plant-left {
+  right: auto;
+  left: 332px;
+}
+
+/* Floor & Pixel Desks */
+.floor {
+  position: relative;
+  flex: 1;
+  overflow-y: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 178px);
+  gap: 28px;
+  padding: 36px;
+  align-content: start;
+  justify-content: start;
+}
+
+.rug {
+  position: absolute;
+  left: 28px;
+  top: 28px;
+  width: min(420px, calc(100% - 56px));
+  height: 196px;
+  background:
+    repeating-linear-gradient(90deg, #8b3a2a 0 16px, #6e2d21 16px 32px);
+  box-shadow:
+    inset 0 0 0 4px #f0b14a55,
+    inset 0 0 0 8px #5a261c,
+    0 4px 12px rgba(0, 0, 0, 0.25);
+  pointer-events: none;
+  opacity: 0.34;
+  border-radius: 4px;
+}
+
+/* Stardew Valley Office Cat */
+.office-cat {
+  position: absolute;
+  right: 32px;
+  bottom: 20px;
+  width: 64px;
+  height: 64px;
+  background-image: url("/stardew/cat.png");
+  background-size: 256px 512px;
+  image-rendering: pixelated;
+  pointer-events: none;
+  z-index: 1;
+  filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.45));
+}
+
+.office-cat.sleeping {
+  background-position: 0 -448px;
+  animation: sv-cat-row7 2.2s steps(2) infinite;
+}
+
+.office-cat.awake {
+  background-position: 0 -320px;
+  animation: sv-cat-groom 0.9s steps(4) infinite;
+}
+
+/* Stardew Valley Office Junimo Mascot */
+.office-junimo {
+  position: absolute;
+  right: 108px;
+  bottom: 26px;
+  width: 32px;
+  height: 32px;
+  background-image: url("/stardew/junimo.png");
+  background-size: 256px 256px;
+  background-position: 0 0;
+  image-rendering: pixelated;
+  pointer-events: none;
+  z-index: 1;
+  filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.45));
+  animation: sv-junimo-idle 1.4s steps(4) infinite;
+}
+
+.office-junimo.dancing {
+  animation: sv-junimo-dance 0.55s steps(8) infinite;
+}
+
+.desk-wrap {
+  position: relative;
+  width: 178px;
+}
+
+.desk {
+  position: relative;
+  z-index: 2;
+  width: 178px;
+  height: 178px;
+  background: linear-gradient(180deg, #523420 0%, #3f2718 100%);
+  border: 3px solid #24140c;
+  border-radius: 6px;
+  box-shadow:
+    0 6px 0 #180e08,
+    0 10px 18px rgba(0, 0, 0, 0.38);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: stretch;
+  padding: 10px;
+  image-rendering: pixelated;
+  text-align: left;
+  transition: transform 0.14s ease, box-shadow 0.14s ease, border-color 0.14s ease;
+}
+
+.desk:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(180deg, #5c3b25 0%, #462c1b 100%);
+  border-color: #6b4930;
+  box-shadow:
+    0 8px 0 #180e08,
+    0 14px 24px rgba(0, 0, 0, 0.45);
+}
+
+.desk.sel {
+  outline: 2px solid var(--lamp);
+  border-color: var(--lamp);
+  box-shadow:
+    0 6px 0 #180e08,
+    0 0 0 4px rgba(242, 180, 75, 0.25),
+    0 12px 24px rgba(0, 0, 0, 0.5);
+}
+
+.desk.working {
+  border-color: rgba(111, 212, 204, 0.65);
+  box-shadow:
+    0 6px 0 #180e08,
+    0 0 18px rgba(111, 212, 204, 0.22),
+    0 12px 24px rgba(0, 0, 0, 0.45);
+}
+
+.desk-surface {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  right: 12px;
+  height: 54px;
+  background: #694329;
+  border: 2px solid #2e1b10;
+  box-shadow: inset 0 -4px 0 #52331e;
+  border-radius: 3px;
+}
+
+.lamp {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  width: 16px;
+  height: 16px;
+  background: #42301d;
+  border: 2px solid #22150c;
+  box-shadow: 0 8px 16px rgba(242, 180, 75, 0.35);
+  z-index: 2;
+}
+
+.desk.working .lamp,
+.desk.awaiting_approval .lamp {
+  background: var(--lamp-bright);
+  box-shadow:
+    0 0 12px var(--lamp),
+    0 12px 24px rgba(242, 180, 75, 0.65);
+}
+
+.desk.working .lamp {
+  animation: flicker 0.8s steps(2) infinite;
+}
+
+.monitor {
+  position: absolute;
+  top: 18px;
+  left: 20px;
+  width: 42px;
+  height: 26px;
+  background: #1c2c2a;
+  border: 2px solid #120c08;
+  box-shadow:
+    0 4px 0 #120c08,
+    inset 0 2px 0 rgba(255, 255, 255, 0.12);
+  z-index: 2;
+  overflow: hidden;
+}
+
+.monitor-code {
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: 0.25;
+  background: repeating-linear-gradient(
+    180deg,
+    transparent 0 3px,
+    rgba(111, 212, 204, 0.7) 3px 5px
+  );
+}
+
+.desk.working .monitor {
+  background: #1b4d48;
+  box-shadow:
+    0 4px 0 #120c08,
+    0 0 14px rgba(111, 212, 204, 0.6);
+}
+
+.desk.working .monitor-code {
+  opacity: 0.95;
+  animation: code-scroll 0.45s steps(3) infinite;
+}
+
+.desk.awaiting_approval .monitor {
+  background: #6e4514;
+  box-shadow:
+    0 4px 0 #120c08,
+    0 0 12px rgba(242, 180, 75, 0.55),
+    inset 4px 4px 0 #ffd175;
+}
+
+.desk.error .monitor {
+  background: #5c1f18;
+  box-shadow:
+    0 4px 0 #120c08,
+    0 0 10px rgba(226, 109, 82, 0.5),
+    inset 4px 4px 0 #e26d52;
+}
+
+.keyboard {
+  position: absolute;
+  top: 49px;
+  left: 26px;
+  width: 28px;
+  height: 6px;
+  background: #2b1d14;
+  box-shadow: 2px 2px 0 #180f0a;
+  z-index: 2;
+}
+
+.desk.working .keyboard {
+  animation: kb-tap 0.25s steps(2) infinite;
+}
+
+.mug {
+  position: absolute;
+  top: 44px;
+  right: 22px;
+  width: 10px;
+  height: 12px;
+  background: #d9cbb8;
+  border: 2px solid #24140c;
+  z-index: 2;
+}
+
+/* Stardew Valley Character Sprite on Desk (64px wide sheet -> scaled 2.25x = 144px wide, frame 36x72) */
+.sv-char {
+  position: absolute;
+  top: 38px;
+  left: 66px;
+  width: 36px;
+  height: 72px;
+  background-repeat: no-repeat;
+  background-size: 144px auto;
+  background-position: 0 0;
+  image-rendering: pixelated;
+  z-index: 3;
+  filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.55));
+}
+
+.char-sebastian {
+  background-image: url("/stardew/characters/sebastian.png");
+}
+.char-maru {
+  background-image: url("/stardew/characters/maru.png");
+}
+.char-abigail {
+  background-image: url("/stardew/characters/abigail.png");
+}
+.char-harvey {
+  background-image: url("/stardew/characters/harvey.png");
+}
+.char-elliott {
+  background-image: url("/stardew/characters/elliott.png");
+}
+.char-penny {
+  background-image: url("/stardew/characters/penny.png");
+}
+.char-clint {
+  background-image: url("/stardew/characters/clint.png");
+}
+.char-robin {
+  background-image: url("/stardew/characters/robin.png");
+}
+
+/* Idle pose: front-facing gentle breathing */
+.sv-char.pose-idle {
+  background-position: 0 0;
+  animation: sv-char-breathe 2.4s steps(2) infinite;
+}
+
+/* Working pose: facing the monitor (row 2 facing up/desk or row 4 facing left toward monitor) with active typing motion */
+.sv-char.pose-working {
+  background-position: 0 -216px;
+  animation:
+    sv-char-work-row3 0.45s steps(4) infinite,
+    sv-work-bob 0.3s steps(2) infinite;
+}
+
+/* Awaiting approval: facing front waving / gesturing */
+.sv-char.pose-awaiting_approval {
+  background-position: 0 0;
+  animation:
+    sv-char-walk-down 0.7s steps(4) infinite,
+    sv-wait-jump 0.8s steps(2) infinite;
+}
+
+/* Queued: walking in place */
+.sv-char.pose-queued {
+  background-position: 0 -72px;
+  animation: sv-char-walk-right 0.75s steps(4) infinite;
+}
+
+/* Arriving (clocking in): brisk walking animation */
+.sv-char.pose-arriving {
+  background-position: 0 0;
+  animation: sv-char-walk-down 0.4s steps(4) infinite;
+}
+
+/* Error pose: distressed */
+.sv-char.pose-error {
+  background-position: -36px 0;
+  filter: drop-shadow(0 0 6px rgba(226, 109, 82, 0.7));
+}
+
+/* Away pose: character is away from desk */
+.sv-char.pose-away {
+  opacity: 0.25;
+  filter: grayscale(0.85);
+}
+
+/* Stardew Valley Emote Bubble (emotes.png: 64x256 -> scaled 1.75x = 112x448, each frame 28x28) */
+.sv-emote {
+  position: absolute;
+  top: 8px;
+  left: 92px;
+  width: 28px;
+  height: 28px;
+  background-image: url("/stardew/emotes.png");
+  background-repeat: no-repeat;
+  background-size: 112px 448px;
+  image-rendering: pixelated;
+  z-index: 5;
+  pointer-events: none;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+/* Row 0 (y=0): Sweat drop - working hard */
+.sv-emote.emote-working {
+  background-position: 0 0;
+  animation:
+    sv-emote-row0 0.65s steps(4) infinite,
+    sv-bubble-float 1.1s ease-in-out infinite alternate;
+}
+
+/* Row 3 (y=-84px): Exclamation (!) - awaiting approval */
+.sv-emote.emote-alert {
+  background-position: 0 -84px;
+  animation:
+    sv-emote-row3 0.55s steps(4) infinite,
+    sv-bubble-float 0.6s ease-in-out infinite alternate;
+}
+
+/* Row 9 (y=-252px): Ellipsis (...) - queued or clocking in */
+.sv-emote.emote-ellipsis {
+  background-position: 0 -252px;
+  animation: sv-emote-row9 0.8s steps(4) infinite;
+}
+
+/* Row 5 (y=-140px): Sleeping (zzz) - away */
+.sv-emote.emote-sleep {
+  background-position: 0 -140px;
+  animation: sv-emote-row5 1.2s steps(4) infinite;
+}
+
+/* Row 2 (y=-56px): Scribble frustration - error */
+.sv-emote.emote-angry {
+  background-position: 0 -56px;
+  animation: sv-emote-row2 0.5s steps(4) infinite;
+}
+
+/* Row 7 (y=-196px): Happy face - shown on hover or selected when idle */
+.sv-emote.emote-happy {
+  background-position: 0 -196px;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+  animation: sv-emote-row7 0.9s steps(4) infinite;
+}
+
+.desk:hover .sv-emote.emote-happy,
+.desk.sel .sv-emote.emote-happy {
+  opacity: 1;
+}
+
+/* Little Junimo helper cheering beside working employee */
+.sv-junimo-helper {
+  position: absolute;
+  top: 76px;
+  right: 14px;
+  width: 24px;
+  height: 24px;
+  background-image: url("/stardew/junimo.png");
+  background-size: 192px 192px;
+  image-rendering: pixelated;
+  z-index: 4;
+  pointer-events: none;
+  animation: junimo-hop 0.5s steps(4) infinite;
+}
+
+.queue-badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 4;
+  background: rgba(22, 16, 12, 0.88);
+  color: var(--warn);
+  border: 1px solid rgba(240, 190, 99, 0.5);
+  border-radius: 999px;
+  padding: 0.08rem 0.42rem;
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 0.64rem;
+  font-weight: 600;
+}
+
+.desk-info {
+  position: relative;
+  z-index: 4;
+  background: rgba(22, 14, 9, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 4px;
+  padding: 0.35rem 0.48rem;
+  backdrop-filter: blur(2px);
+}
+
+.desk strong {
+  display: block;
+  font-size: 0.92rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.desk-role {
+  display: block;
+  font-size: 0.65rem;
+  color: var(--paper-dim);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 0.08rem;
+  opacity: 0.85;
+}
+
+.desk-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: 0.14rem;
+}
+
+.desk em {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 0.7rem;
+  font-style: normal;
+  font-weight: 600;
+  color: var(--ok);
+}
+
+.desk small {
+  font-size: 0.66rem;
+  opacity: 0.8;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.desk.queued em,
+.desk.arriving em {
+  color: var(--warn);
+}
+
+.desk.working em {
+  color: var(--busy);
+}
+
+.desk.awaiting_approval em {
+  color: var(--lamp-bright);
+}
+
+.desk.error em {
+  color: var(--bad);
+}
+
+.desk.away {
+  opacity: 0.82;
+}
+
+.desk.away .lamp {
+  box-shadow: none;
+}
+
+.desk.away em {
+  color: var(--paper-muted);
+}
+
+.clock-in {
+  position: absolute;
+  left: 50%;
+  bottom: -12px;
+  transform: translateX(-50%);
+  z-index: 5;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  white-space: nowrap;
+  background: var(--lamp);
+  color: var(--ink);
+  border-color: #c48a2b;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.45);
+}
+
+.empty-room {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+  background: rgba(24, 16, 11, 0.55);
+  border: 1px dashed var(--line-bright);
+  border-radius: var(--radius-md);
+  text-align: center;
+}
+
+.empty-junimo-art {
+  width: 48px;
+  height: 48px;
+  background-image: url("/stardew/junimo.png");
+  background-size: 384px 384px;
+  background-position: 0 0;
+  image-rendering: pixelated;
+  margin-bottom: 0.5rem;
+  animation: sv-junimo-dance 0.8s steps(8) infinite;
+}
+
+/* Stardew Valley Sprite Keyframes */
+@keyframes sv-char-breathe {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes sv-char-walk-down {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -144px 0;
+  }
+}
+
+@keyframes sv-char-walk-right {
+  from {
+    background-position: 0 -72px;
+  }
+  to {
+    background-position: -144px -72px;
+  }
+}
+
+@keyframes sv-char-work-row3 {
+  from {
+    background-position: 0 -216px;
+  }
+  to {
+    background-position: -144px -216px;
+  }
+}
+
+@keyframes sv-work-bob {
+  to {
+    transform: translateX(-3px) translateY(-2px);
+  }
+}
+
+@keyframes sv-wait-jump {
+  to {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes sv-emote-row0 {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -112px 0;
+  }
+}
+
+@keyframes sv-emote-row2 {
+  from {
+    background-position: 0 -56px;
+  }
+  to {
+    background-position: -112px -56px;
+  }
+}
+
+@keyframes sv-emote-row3 {
+  from {
+    background-position: 0 -84px;
+  }
+  to {
+    background-position: -112px -84px;
+  }
+}
+
+@keyframes sv-emote-row5 {
+  from {
+    background-position: 0 -140px;
+  }
+  to {
+    background-position: -112px -140px;
+  }
+}
+
+@keyframes sv-emote-row7 {
+  from {
+    background-position: 0 -196px;
+  }
+  to {
+    background-position: -112px -196px;
+  }
+}
+
+@keyframes sv-emote-row9 {
+  from {
+    background-position: 0 -252px;
+  }
+  to {
+    background-position: -112px -252px;
+  }
+}
+
+@keyframes sv-bubble-float {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes junimo-hop {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -96px 0;
+  }
+}
+
+@keyframes sv-junimo-idle {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -128px 0;
+  }
+}
+
+@keyframes sv-junimo-dance {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -256px 0;
+  }
+}
+
+@keyframes sv-cat-row7 {
+  from {
+    background-position: 0 -448px;
+  }
+  to {
+    background-position: -128px -448px;
+  }
+}
+
+@keyframes sv-cat-groom {
+  from {
+    background-position: 0 -320px;
+  }
+  to {
+    background-position: -256px -320px;
+  }
+}
+
+@keyframes sv-robin-hammer {
+  from {
+    background-position: -42px 0;
+  }
+  to {
+    background-position: -168px 0;
+  }
+}
+
+@keyframes code-scroll {
+  to {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes kb-tap {
+  to {
+    transform: translateY(1px);
+  }
+}
+
+@keyframes flicker {
+  to {
+    background: #ffe094;
+  }
+}
+
+@keyframes wait {
+  to {
+    transform: translateY(-5px);
+  }
+}
+
+/* Right Chat Panel */
+.chat-identity {
+  min-width: 0;
+  flex: 1;
+}
+
+.chat-title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.chat-avatar {
+  width: 24px;
+  height: 28px;
+  background-repeat: no-repeat;
+  background-size: 96px auto;
+  background-position: 0 -2px;
+  image-rendering: pixelated;
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--line-bright);
+  flex: none;
+}
+
+.chat-sub-row {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 0.25rem;
+  min-width: 0;
+}
+
+.inline-provider-select {
+  background: rgba(20, 13, 9, 0.65);
+  color: var(--lamp-bright);
+  border: 1px solid rgba(242, 180, 75, 0.35);
+  border-radius: 4px;
+  padding: 0.08rem 0.35rem;
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 0.68rem;
+  cursor: pointer;
+}
+
+.seat-badge {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 0.1rem 0.42rem;
+  border-radius: 999px;
+  background: rgba(168, 216, 138, 0.15);
+  color: var(--ok);
+  border: 1px solid rgba(168, 216, 138, 0.35);
+}
+
+.seat-badge.working {
+  background: rgba(111, 212, 204, 0.16);
+  color: var(--busy);
+  border-color: rgba(111, 212, 204, 0.4);
+}
+
+.seat-badge.awaiting_approval {
+  background: rgba(242, 180, 75, 0.2);
+  color: var(--lamp-bright);
+  border-color: rgba(242, 180, 75, 0.5);
+}
+
+.seat-badge.queued {
+  background: rgba(240, 190, 99, 0.15);
+  color: var(--warn);
+  border-color: rgba(240, 190, 99, 0.4);
+}
+
+.seat-badge.error,
+.seat-badge.away {
+  background: rgba(226, 109, 82, 0.16);
+  color: #f49b86;
+  border-color: rgba(226, 109, 82, 0.4);
+}
+
+.chat-queue-pill {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 0.66rem;
+  padding: 0.08rem 0.4rem;
+  border-radius: 999px;
+  background: rgba(240, 190, 99, 0.14);
+  color: var(--warn);
+}
+
+.workspace-meta {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+
+.workspace-meta:hover {
+  color: var(--lamp-bright);
+}
+
+.chat-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex: none;
+}
+
+/* Employee Profile Card (Stardew Valley Character Dossier) */
+.employee-profile {
+  background: linear-gradient(180deg, #2d1e15 0%, #241811 100%);
+  border-bottom: 1px solid var(--line-bright);
+  padding: 0.8rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.profile-top {
+  display: flex;
+  gap: 0.8rem;
+  align-items: flex-start;
+}
+
+.profile-photo-frame {
+  position: relative;
+  width: 68px;
+  height: 68px;
+  flex: none;
+  background: radial-gradient(circle at 50% 35%, #5c3d28 0%, #332015 100%);
+  border: 3px solid #6b482e;
+  box-shadow:
+    inset 0 0 0 2px #1e120b,
+    0 4px 10px rgba(0, 0, 0, 0.45);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+/* Stardew Valley Official 64x64 Portrait Sheet (128px wide = 2 cols of 64px) */
+.sv-portrait {
+  display: block;
+  width: 64px;
+  height: 64px;
+  background-repeat: no-repeat;
+  background-size: 128px auto;
+  background-position: 0 0;
+  image-rendering: pixelated;
+}
+
+.portrait-sebastian {
+  background-image: url("/stardew/portraits/sebastian.png");
+}
+.portrait-maru {
+  background-image: url("/stardew/portraits/maru.png");
+}
+.portrait-abigail {
+  background-image: url("/stardew/portraits/abigail.png");
+}
+.portrait-harvey {
+  background-image: url("/stardew/portraits/harvey.png");
+}
+.portrait-elliott {
+  background-image: url("/stardew/portraits/elliott.png");
+}
+.portrait-penny {
+  background-image: url("/stardew/portraits/penny.png");
+}
+.portrait-clint {
+  background-image: url("/stardew/portraits/clint.png");
+}
+.portrait-robin {
+  background-image: url("/stardew/portraits/robin.png");
+}
+
+/* Portrait expression by state */
+.sv-portrait.expr-away {
+  background-position: -64px 0;
+  filter: grayscale(0.45);
+}
+
+.sv-portrait.expr-error {
+  background-position: 0 -64px;
+}
+
+.profile-status-dot {
+  position: absolute;
+  right: 3px;
+  bottom: 3px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--ok);
+  border: 2px solid #1e120b;
+}
+
+.profile-status-dot.working {
+  background: var(--busy);
+  box-shadow: 0 0 6px var(--busy);
+}
+
+.profile-status-dot.awaiting_approval,
+.profile-status-dot.queued {
+  background: var(--lamp-bright);
+}
+
+.profile-status-dot.error,
+.profile-status-dot.away {
+  background: var(--bad);
+}
+
+.profile-meta-grid {
+  flex: 1;
+  min-width: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.35rem 0.65rem;
+}
+
+.profile-meta-item {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.08rem;
+}
+
+.profile-meta-item.full-span {
+  grid-column: 1 / -1;
+}
+
+.meta-label {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 0.65rem;
+  color: var(--paper-muted);
+}
+
+.meta-val {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--paper);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.role-val {
+  color: var(--lamp-bright);
+}
+
+.profile-fault-box {
+  padding: 0.4rem 0.6rem;
+  background: rgba(92, 28, 22, 0.38);
+  border: 1px solid rgba(226, 109, 82, 0.45);
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  color: #f7a692;
+  line-height: 1.35;
+}
+
+.profile-actions-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  padding-top: 0.15rem;
+}
+
+.profile-actions-bar button {
+  flex: 1;
+  padding: 0.32rem 0.55rem;
+  font-size: 0.78rem;
+  white-space: nowrap;
+}
+
+.profile-editor {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  padding-top: 0.3rem;
+  border-top: 1px dashed var(--line-bright);
+}
+
+.editor-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.45rem;
+}
+
+.profile-editor label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  font-size: 0.72rem;
+  color: var(--paper-dim);
+}
+
+.profile-editor input,
+.profile-editor select {
+  background: var(--panel-input);
+  color: var(--paper);
+  border: 1px solid var(--line-bright);
+  border-radius: 4px;
+  padding: 0.32rem 0.45rem;
+  font-size: 0.78rem;
+  min-width: 0;
+}
+
+.profile-editor-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.4rem;
+}
+
+.profile-editor-actions button {
+  padding: 0.28rem 0.65rem;
+  font-size: 0.76rem;
+}
+
+.approve {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.6rem;
+  align-items: center;
+  padding: 0.6rem 1rem;
+  background: linear-gradient(90deg, rgba(110, 69, 20, 0.85) 0%, rgba(74, 48, 16, 0.85) 100%);
+  border-bottom: 1px solid rgba(242, 180, 75, 0.45);
+}
+
+.approve-text {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--lamp-bright);
+}
+
+.approve-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--lamp-bright);
+  box-shadow: 0 0 8px var(--lamp);
+}
+
+.approve-btns {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.chat .log {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  user-select: text;
+}
+
+.chat-welcome {
+  margin: auto 0;
+  padding: 1.25rem;
+  background: rgba(20, 13, 9, 0.45);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  text-align: center;
+}
+
+.welcome-title {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.quick-prompts {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-top: 0.85rem;
+}
+
+.prompt-chip {
+  text-align: left;
+  font-size: 0.78rem;
+  padding: 0.45rem 0.65rem;
+  background: rgba(54, 37, 27, 0.65);
+  border-color: var(--line);
+  color: var(--paper-dim);
+}
+
+.prompt-chip:hover {
+  color: var(--paper);
+  border-color: var(--lamp);
+}
+
+.msg {
+  padding: 0.65rem 0.8rem;
+  border-radius: var(--radius-md);
+  background: rgba(20, 13, 9, 0.55);
+  border: 1px solid var(--line);
+  max-width: 92%;
+  align-self: flex-start;
+}
+
+.msg.user {
+  align-self: flex-end;
+  background: rgba(94, 62, 36, 0.5);
+  border-color: rgba(242, 180, 75, 0.32);
+  color: #fae3bc;
+}
+
+.msg.error {
+  align-self: stretch;
+  max-width: 100%;
+  background: rgba(92, 28, 22, 0.35);
+  border-color: rgba(226, 109, 82, 0.45);
+  color: #f7a692;
+}
+
+.msg.streaming {
+  border-color: rgba(111, 212, 204, 0.4);
+  background: rgba(30, 56, 54, 0.35);
+}
+
+.msg-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.25rem;
+  font-size: 0.76rem;
+}
+
+.msg-head time {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 0.68rem;
+  color: var(--paper-muted);
+}
+
+.chat p {
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  line-height: 1.5;
+  font-size: 0.88rem;
+}
+
+/* Markdown & Image Rendering in Chat */
+.md-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  word-break: break-word;
+}
+
+.md-h1,
+.md-h2,
+.md-h3 {
+  margin: 0.25rem 0 0.05rem;
+  color: var(--lamp-bright);
+  font-weight: 600;
+}
+
+.md-h1 {
+  font-size: 1.05rem;
+  border-bottom: 1px solid rgba(242, 180, 75, 0.22);
+  padding-bottom: 0.2rem;
+}
+
+.md-h2 {
+  font-size: 0.96rem;
+}
+
+.md-h3 {
+  font-size: 0.9rem;
+}
+
+.md-inline-code {
+  font-family: ui-monospace, "SF Mono", Menlo, Monaco, monospace;
+  font-size: 0.8rem;
+  background: rgba(12, 8, 5, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 4px;
+  padding: 0.08rem 0.35rem;
+  color: var(--lamp-bright);
+}
+
+.md-code-block {
+  background: #140d09;
+  border: 1px solid var(--line-bright);
+  border-radius: 6px;
+  overflow: hidden;
+  margin: 0.15rem 0;
+}
+
+.md-code-header {
+  background: rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid var(--line);
+  padding: 0.2rem 0.6rem;
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 0.68rem;
+  color: var(--paper-dim);
+  text-transform: lowercase;
+}
+
+.md-code-block pre {
+  margin: 0;
+  padding: 0.6rem 0.75rem;
+  overflow-x: auto;
+  font-family: ui-monospace, "SF Mono", Menlo, Monaco, monospace;
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: #f3e6cf;
+}
+
+.md-list {
+  margin: 0;
+  padding-left: 1.3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.22rem;
+}
+
+.md-quote {
+  margin: 0;
+  padding: 0.35rem 0.7rem;
+  border-left: 3px solid var(--lamp);
+  background: rgba(242, 180, 75, 0.08);
+  color: var(--paper-dim);
+  border-radius: 0 4px 4px 0;
+}
+
+.md-hr {
+  border: 0;
+  border-top: 1px solid var(--line-bright);
+  margin: 0.3rem 0;
+}
+
+.md-link {
+  color: var(--busy);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.md-table-wrap {
+  overflow-x: auto;
+}
+
+.md-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+}
+
+.md-table th,
+.md-table td {
+  border: 1px solid var(--line-bright);
+  padding: 0.3rem 0.5rem;
+  text-align: left;
+}
+
+.md-table th {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--lamp-bright);
+}
+
+.md-image,
+.msg-attachment-img {
+  display: block;
+  max-width: 100%;
+  max-height: 240px;
+  width: auto;
+  height: auto;
+  border-radius: 6px;
+  border: 1px solid var(--line-bright);
+  background: #140d09;
+  object-fit: contain;
+  margin-top: 0.25rem;
+}
+
+.md-img-loading,
+.md-img-fallback {
+  display: inline-block;
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 0.74rem;
+  padding: 0.2rem 0.45rem;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px dashed var(--line-bright);
+  border-radius: 4px;
+  color: var(--paper-dim);
+}
+
+.msg-images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.msg-image-card {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  max-width: 220px;
+}
+
+.msg-image-card figcaption {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 0.66rem;
+  color: var(--paper-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.msg-files {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.2rem;
+}
+
+.msg-file-pill {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 0.72rem;
+  padding: 0.14rem 0.48rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--line-bright);
+}
+
+.chip-thumb {
+  width: 20px;
+  height: 20px;
+  object-fit: cover;
+  border-radius: 3px;
+  border: 1px solid var(--line-bright);
+}
+
+.typing-dots {
+  display: inline-flex;
+  gap: 3px;
+  align-items: center;
+}
+
+.typing-dots i {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--busy);
+  display: inline-block;
+  animation: wait 0.9s steps(2) infinite;
+}
+
+.typing-dots i:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-dots i:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.hint {
+  margin: 0.45rem 0 0;
+  font-size: 0.74rem;
+  line-height: 1.4;
+}
+
+.chips {
+  padding: 0.45rem 1rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 0.74rem;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: #36251b;
+  border: 1px solid var(--line-bright);
+  border-radius: 999px;
+  padding: 0.16rem 0.5rem;
+}
+
+.chip-name {
+  max-width: 160px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.chip-size {
+  font-size: 0.66rem;
+  opacity: 0.7;
+}
+
+.chip button {
+  border: 0;
+  background: transparent;
+  padding: 0 0.2rem;
+  font-size: 0.85rem;
+  line-height: 1;
+}
+
+.older {
+  align-self: center;
+  margin-bottom: 0.25rem;
+  font-size: 0.76rem;
+}
+
+.chat-footer {
+  padding: 0.75rem 1rem 0.9rem;
+  border-top: 1px solid var(--line);
+  background: rgba(20, 13, 9, 0.4);
+}
+
+textarea {
+  width: 100%;
+  min-height: 76px;
+  max-height: 200px;
+  resize: vertical;
+  background: var(--panel-input);
+  color: var(--paper);
+  border: 1px solid var(--line-bright);
+  border-radius: var(--radius-sm);
+  padding: 0.55rem 0.65rem;
+  line-height: 1.45;
+  font-size: 0.88rem;
+}
+
+textarea::placeholder {
+  color: var(--paper-muted);
+}
+
+.footer-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.5rem;
+  gap: 0.5rem;
+}
+
+.shortcut-hint {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 0.68rem;
+  color: var(--paper-muted);
+}
+
+.row {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.45rem;
+}
+
+.chat-empty-state {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+}
+
+.empty {
+  margin: 0;
+  padding: 0.5rem;
+  color: var(--paper-dim);
+}
+
+.err-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.5rem 1rem 0.75rem;
+  padding: 0.5rem 0.75rem;
+  background: rgba(92, 28, 22, 0.45);
+  border: 1px solid rgba(226, 109, 82, 0.55);
+  border-radius: var(--radius-sm);
+}
+
+.err {
+  margin: 0;
+  padding: 0;
+  color: #f9a591;
+  font-size: 0.82rem;
+  word-break: break-word;
+}
+
+.err-close {
+  border: 0;
+  background: transparent;
+  color: #f9a591;
+  padding: 0.1rem 0.35rem;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+/* Modal Dialog */
+.ask {
+  position: fixed;
+  inset: 0;
+  background: rgba(12, 8, 5, 0.72);
+  backdrop-filter: blur(3px);
+  display: grid;
+  place-items: center;
+  z-index: 20;
+}
+
+.ask form {
+  width: min(440px, calc(100% - 48px));
+  background: var(--panel-elevated);
+  border: 1px solid var(--line-bright);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.ask-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+}
+
+.ask-title {
+  font-size: 1rem;
+  margin-bottom: 0.1rem;
+}
+
+.ask label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.38rem;
+  font-size: 0.84rem;
+  color: var(--paper-dim);
+}
+
+.ask input,
+.ask select {
+  background: var(--panel-input);
+  color: var(--paper);
+  border: 1px solid var(--line-bright);
+  border-radius: var(--radius-sm);
+  padding: 0.5rem 0.6rem;
+  font-size: 0.88rem;
+}
+
+.ws-picker-row {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.ws-picker-row input {
+  flex: 1;
+  min-width: 0;
+}

@@ -1,0 +1,354 @@
+{
+  "id": "R05-retest",
+  "status": "失败",
+  "expected": "随机文字完全匹配，形状种类与数量均正确",
+  "actual": "text_ok=False; shape_ok=True; reply='我先查看 `probe.png` 里实际画了什么，再按你要求的 JSON 格式回报文字和图形数量。```json\\n{\"text\":\"7477AA\",\"shapes\":[{\"kind\":\"circle\",\"count\":1},{\"kind\":\"triangle\",\"count\":1}]}\\n```'",
+  "recorded_at": "2026-10-21T23:39:27Z",
+  "expected_text": "747HE",
+  "expected_shapes": [
+    "circle",
+    "triangle"
+  ],
+  "image": "tests/fixtures/cursor/2026.05.01-eea359f/R05-retest.png",
+  "invocation": {
+    "argv": [
+      "~/.local/bin/agent",
+      "-p",
+      "--output-format",
+      "stream-json",
+      "--stream-partial-output",
+      "--trust",
+      "--workspace",
+      "/var/folders/d6/slzf66jj5jd79kp_cmqmmnv40000gn/T/de<redacted>",
+      "--force",
+      "Inspect the image file probe.png. After stripping leading and trailing whitespace, report the exact text drawn in the image, then list each shape kind and how many. Valid kinds: circle, triangle, square. Do not infer from this prompt; the prompt does not name the text or the shapes. Reply as JSON {\"text\":\"...\",\"shapes\":[{\"kind\":\"...\",\"count\":1}]}"
+    ],
+    "exit_code": 0,
+    "seconds": 6.2,
+    "cancelled": false,
+    "session_id": "fb182c63-5c56-424c-aa6c-25f9ab805440",
+    "result_text": "我先查看 `probe.png` 里实际画了什么，再按你要求的 JSON 格式回报文字和图形数量。```json\n{\"text\":\"7477AA\",\"shapes\":[{\"kind\":\"circle\",\"count\":1},{\"kind\":\"triangle\",\"count\":1}]}\n```",
+    "event_types": [
+      "system",
+      "user",
+      "thinking",
+      "thinking",
+      "thinking",
+      "thinking",
+      "thinking",
+      "thinking",
+      "thinking",
+      "thinking",
+      "thinking",
+      "assistant",
+      "assistant",
+      "assistant",
+      "assistant",
+      "tool_call",
+      "tool_call",
+      "thinking",
+      "thinking",
+      "thinking",
+      "thinking",
+      "thinking",
+      "thinking",
+      "thinking",
+      "assistant",
+      "assistant",
+      "assistant",
+      "result"
+    ],
+    "stdout": "{\"type\":\"system\",\"subtype\":\"init\",\"apiKeySource\":\"login\",\"cwd\":\"/private<path>\",\"session_id\":\"fb182c63-5c56-424c-aa6c-25f9ab805440\",\"model\":\"Auto\",\"permissionMode\":\"default\"}\n{\"type\":\"user\",\"message\":{\"role\":\"user\",\"content\":[{\"type\":\"text\",\"text\":\"Inspect the image file probe.png. After stripping leading and trailing whitespace, report the exact text drawn in the image, then list each shape kind and how many. Valid kinds: circle, triangle, square. Do not infer from this prompt; the prompt does not name the text or the shapes. Reply as JSON {\\\"text\\\":\\\"...\\\",\\\"shapes\\\":[{\\\"kind\\\":\\\"...\\\",\\\"count\\\":1}]}\"}]},\"session_id\":\"fb182c63-5c56-424c-aa6c-25f9ab805440\"}\n{\"type\":\"thinking\",\"subtype\":\"delta\",\"text\":\"I\",\"session_id\":\"fb182c63-5c56-424c-aa6c-25f9ab805440\",\"timestamp_ms\":1792625964656}\n{\"type\":\"thinking\",\"subtype\":\"delta\",\"text\":\" need to inspect probe\",\"session_id\":\"fb182c63-5c56-424c-aa6c-25f9ab805440\",\"timestamp_ms\":1792625964658}\n{\"type\":\"thinking\",\"subtype\":\"delta\",\"text\":\".png and extract the\",\"session_id\":\"fb182c63-5c56-424c-aa6c-25f9ab805440\",\"timestamp_ms\":1792625964664}\n{\"type\":\"thinking\",\"subtype\":\"delta\",\"text\":\" exact text after stripping\",\"session_id\":\"fb182c63-5c56-424c-aa6c-25f9ab805440\",\"timestamp_ms\":1792625964679}\n{\"type\":\"thinking\",\"subtype\":\"delta\",\"text\":\" whitespace, plus count\",\"session_id\":\"fb182c63-5c56-424c-aa6c-25f9ab805440\",\"timestamp_ms\":1792625964700}\n{\"type\":\"thinking\",\"subtype\":\"delta\",\"text\":\" each shape kind—circle\",\"session_id\":\"fb182c63-5c56-424c-aa6c-25f9ab805440\",\"timestamp_ms\":1792625964723}\n{\"type\":\"thinking\",\"subtype\":\"delta\",\"text\":\", triangle, and square\",\"session_id\":\"fb182c63-5c56-424c-aa6c-25f9ab805440\",\"timestamp_ms\":1792625964745}\n{\"type\":\"thinking\",\"subtype\":\"delta\",\"text\":\".\",\"session_id\":\"fb182c63-5c56-424c-aa6c-25f9ab805440\",\"timestamp_ms\":1792625964768}\n{\"type\":\"thinking\",\"subtype\":\"completed\",\"session_id\":\"fb182c63-5c56-424c-aa6c-25f9ab805440\",\"timestamp_ms\":1792625964770}\n{\"type\":\"assistant\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"我\"}]},\"session_id\":\"fb182c63-5c56-424c-aa6c-25f9ab805440\",\"timestamp_ms\":1792625964771}\n{\"type\":\"assistant\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"先查看 `probe.png` 里实际画了什么，再按你要求的 JSON 格式回报\"}]},\"session_id\":\"fb182c63-5c56-424c-aa6c-25f9ab805440\",\"timestamp_ms\":1792625964773}\n{\"type\":\"assistant\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"文字和图形数量。\"}]},\"session_id\":\"fb182c63-5c56-424c-aa6c-25f9ab805440\",\"timestamp_ms\":1792625964833}\n{\"type\":\"assistant\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"我先查看 `probe.png` 里实际画了什么，再按你要求的 JSON 格式回报文字和图形数量。\"}]},\"session_id\":\"fb182c63-5c56-424c-aa6c-25f9ab805440\",\"model_call_id\":\"81e419b8-2c03-430e-b9e4-accc9c84e9e7-0-vfj8\",\"timestamp_ms\":1792625965176}\n{\"type\":\"tool_call\",\"subtype\":\"started\",\"call_id\":\"call-42bc8415-3e65-4846-b7ef-8af9d5183649-0\\nfc_p6BDdnb-4SRMt5-69f344b7-aws_ue1_0\",\"tool_call\":{\"readToolCall\":{\"args\":{\"path\":\"<path>/probe.png\"}}},\"model_call_id\":\"81e419b8-2c03-430e-b9e4-accc9c84e9e7-0-vfj8\",\"session_id\":\"fb182c63-5c56-424c-aa6c-25f9ab805440\",\"timestamp_ms\":1792625965176}\n{\"type\":\"tool_call\",\"subtype\":\"completed\",\"call_id\":\"call-42bc8415-3e65-4846-b7ef-8af9d5183649-0\\nfc_p6BDdnb-4SRMt5-69f344b7-aws_ue1_0\",\"tool_call\":{\"readToolCall\":{\"args\":{\"path\":\"<path>/probe.png\"},\"result\":{\"success\":{\"isEmpty\":false,\"exceededLimit\":false,\"totalLines\":0,\"fileSize\":2353,\"path\":\"<path>/probe.png\",\"dataBlobId\":\"7YuDDYQa/EVHL5vBvlV89JFzOtbraaiOIQ3tgl6vHiA=\",\"relatedCursorRulePaths\":[],\"relatedCursorRules\":[]}}}},\"model_call_id\":\"81e419b8-2c03-430e-b9e4-accc9c84e9e7-0-vfj8\",\"session_id\":\"fb182c63-5c56-424c-aa6c-25f9ab805440\",\"timestamp_ms\":1792625965235}\n{\"type\":\"thinking\",\"subtype\":\"delta\",\"text\":\"The\",\"session_id\":\"fb182c63-5c56-424c-aa6c-25f9ab805440\",\"timestamp_ms\":1792625966229}\n{\"type\":\"thinking\",\"subtype\":\"delta\",\"text\":\" image shows the text\",\"session_id\":\"fb182c63-5c56-424c-aa6c-25f9ab805440\",\"timestamp_ms\":1792625966229}\n{\"type\":\"thinking\",\"subtype\":\"delta\",\"text\":\" \\\"7477AA\\\". It contains\",\"session_id\":\"fb182c63-5c56-424c-aa6c-25f9ab805440\",\"timestamp_ms\":1792625966329}\n{\"type\":\"thinking\",\"subtype\":\"delta\",\"text\":\" one filled red circle\",\"session_id\":\"fb182c63-5c56-424c-aa6c-25f9ab805440\",\"timestamp_ms\":1792625966329}\n{\"type\":\"thinking\",\"subtype\":\"delta\",\"text\":\" and one green inverted\",\"session_id\":\"fb182c63-5c56-424c-aa6c-25f9ab805440\",\"timestamp_ms\":1792625966329}\n{\"type\":\"thinking\",\"subtype\":\"delta\",\"text\":\" triangle.\",\"session_id\":\"fb182c63-5c56-424c-aa6c-25f9ab805440\",\"timestamp_ms\":1792625966330}\n{\"type\":\"thinking\",\"subtype\":\"completed\",\"session_id\":\"fb182c63-5c56-424c-aa6c-25f9ab805440\",\"timestamp_ms\":1792625967273}\n{\"type\":\"assistant\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"```json\\n{\\\"text\\\":\\\"7477AA\\\",\\\"shapes\\\":[{\\\"kind\\\":\\\"circle\\\",\\\"count\\\":1},{\\\"kind\\\":\\\"triangle\\\",\\\"count\\\":1}]}\"}]},\"session_id\":\"fb182c63-5c56-424c-aa6c-25f9ab805440\",\"timestamp_ms\":1792625967273}\n{\"type\":\"assistant\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"\\n```\"}]},\"session_id\":\"fb182c63-5c56-424c-aa6c-25f9ab805440\",\"timestamp_ms\":1792625967281}\n{\"type\":\"assistant\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"```json\\n{\\\"text\\\":\\\"7477AA\\\",\\\"shapes\\\":[{\\\"kind\\\":\\\"circle\\\",\\\"count\\\":1},{\\\"kind\\\":\\\"triangle\\\",\\\"count\\\":1}]}\\n```\"}]},\"session_id\":\"fb182c63-5c56-424c-aa6c-25f9ab805440\"}\n{\"type\":\"result\",\"subtype\":\"success\",\"duration_ms\":4783,\"duration_api_ms\":4783,\"is_error\":false,\"result\":\"我先查看 `probe.png` 里实际画了什么，再按你要求的 JSON 格式回报文字和图形数量。```json\\n{\\\"text\\\":\\\"7477AA\\\",\\\"shapes\\\":[{\\\"kind\\\":\\\"circle\\\",\\\"count\\\":1},{\\\"kind\\\":\\\"triangle\\\",\\\"count\\\":1}]}\\n```\",\"session_id\":\"fb182c63-5c56-424c-aa6c-25f9ab805440\",\"request_id\":\"81e419b8-2c03-430e-b9e4-accc9c84e9e7\",\"usage\":{\"inputTokens\":15078,\"outputTokens\":508,\"cacheReadTokens\":14528,\"cacheWriteTokens\":0}}\n",
+    "stderr": "",
+    "events": [
+      {
+        "type": "system",
+        "subtype": "init",
+        "apiKeySource": "login",
+        "cwd": "/private<path>",
+        "session_id": "fb182c63-5c56-424c-aa6c-25f9ab805440",
+        "model": "Auto",
+        "permissionMode": "default"
+      },
+      {
+        "type": "user",
+        "message": {
+          "role": "user",
+          "content": [
+            {
+              "type": "text",
+              "text": "Inspect the image file probe.png. After stripping leading and trailing whitespace, report the exact text drawn in the image, then list each shape kind and how many. Valid kinds: circle, triangle, square. Do not infer from this prompt; the prompt does not name the text or the shapes. Reply as JSON {\"text\":\"...\",\"shapes\":[{\"kind\":\"...\",\"count\":1}]}"
+            }
+          ]
+        },
+        "session_id": "fb182c63-5c56-424c-aa6c-25f9ab805440"
+      },
+      {
+        "type": "thinking",
+        "subtype": "delta",
+        "text": "I",
+        "session_id": "fb182c63-5c56-424c-aa6c-25f9ab805440",
+        "timestamp_ms": 1792625964656
+      },
+      {
+        "type": "thinking",
+        "subtype": "delta",
+        "text": " need to inspect probe",
+        "session_id": "fb182c63-5c56-424c-aa6c-25f9ab805440",
+        "timestamp_ms": 1792625964658
+      },
+      {
+        "type": "thinking",
+        "subtype": "delta",
+        "text": ".png and extract the",
+        "session_id": "fb182c63-5c56-424c-aa6c-25f9ab805440",
+        "timestamp_ms": 1792625964664
+      },
+      {
+        "type": "thinking",
+        "subtype": "delta",
+        "text": " exact text after stripping",
+        "session_id": "fb182c63-5c56-424c-aa6c-25f9ab805440",
+        "timestamp_ms": 1792625964679
+      },
+      {
+        "type": "thinking",
+        "subtype": "delta",
+        "text": " whitespace, plus count",
+        "session_id": "fb182c63-5c56-424c-aa6c-25f9ab805440",
+        "timestamp_ms": 1792625964700
+      },
+      {
+        "type": "thinking",
+        "subtype": "delta",
+        "text": " each shape kind—circle",
+        "session_id": "fb182c63-5c56-424c-aa6c-25f9ab805440",
+        "timestamp_ms": 1792625964723
+      },
+      {
+        "type": "thinking",
+        "subtype": "delta",
+        "text": ", triangle, and square",
+        "session_id": "fb182c63-5c56-424c-aa6c-25f9ab805440",
+        "timestamp_ms": 1792625964745
+      },
+      {
+        "type": "thinking",
+        "subtype": "delta",
+        "text": ".",
+        "session_id": "fb182c63-5c56-424c-aa6c-25f9ab805440",
+        "timestamp_ms": 1792625964768
+      },
+      {
+        "type": "thinking",
+        "subtype": "completed",
+        "session_id": "fb182c63-5c56-424c-aa6c-25f9ab805440",
+        "timestamp_ms": 1792625964770
+      },
+      {
+        "type": "assistant",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "我"
+            }
+          ]
+        },
+        "session_id": "fb182c63-5c56-424c-aa6c-25f9ab805440",
+        "timestamp_ms": 1792625964771
+      },
+      {
+        "type": "assistant",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "先查看 `probe.png` 里实际画了什么，再按你要求的 JSON 格式回报"
+            }
+          ]
+        },
+        "session_id": "fb182c63-5c56-424c-aa6c-25f9ab805440",
+        "timestamp_ms": 1792625964773
+      },
+      {
+        "type": "assistant",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "文字和图形数量。"
+            }
+          ]
+        },
+        "session_id": "fb182c63-5c56-424c-aa6c-25f9ab805440",
+        "timestamp_ms": 1792625964833
+      },
+      {
+        "type": "assistant",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "我先查看 `probe.png` 里实际画了什么，再按你要求的 JSON 格式回报文字和图形数量。"
+            }
+          ]
+        },
+        "session_id": "fb182c63-5c56-424c-aa6c-25f9ab805440",
+        "model_call_id": "81e419b8-2c03-430e-b9e4-accc9c84e9e7-0-vfj8",
+        "timestamp_ms": 1792625965176
+      },
+      {
+        "type": "tool_call",
+        "subtype": "started",
+        "call_id": "call-42bc8415-3e65-4846-b7ef-8af9d5183649-0\nfc_p6BDdnb-4SRMt5-69f344b7-aws_ue1_0",
+        "tool_call": {
+          "readToolCall": {
+            "args": {
+              "path": "<path>/probe.png"
+            }
+          }
+        },
+        "model_call_id": "81e419b8-2c03-430e-b9e4-accc9c84e9e7-0-vfj8",
+        "session_id": "fb182c63-5c56-424c-aa6c-25f9ab805440",
+        "timestamp_ms": 1792625965176
+      },
+      {
+        "type": "tool_call",
+        "subtype": "completed",
+        "call_id": "call-42bc8415-3e65-4846-b7ef-8af9d5183649-0\nfc_p6BDdnb-4SRMt5-69f344b7-aws_ue1_0",
+        "tool_call": {
+          "readToolCall": {
+            "args": {
+              "path": "<path>/probe.png"
+            },
+            "result": {
+              "success": {
+                "isEmpty": false,
+                "exceededLimit": false,
+                "totalLines": 0,
+                "fileSize": 2353,
+                "path": "<path>/probe.png",
+                "dataBlobId": "7YuDDYQa/EVHL5vBvlV89JFzOtbraaiOIQ3tgl6vHiA=",
+                "relatedCursorRulePaths": [],
+                "relatedCursorRules": []
+              }
+            }
+          }
+        },
+        "model_call_id": "81e419b8-2c03-430e-b9e4-accc9c84e9e7-0-vfj8",
+        "session_id": "fb182c63-5c56-424c-aa6c-25f9ab805440",
+        "timestamp_ms": 1792625965235
+      },
+      {
+        "type": "thinking",
+        "subtype": "delta",
+        "text": "The",
+        "session_id": "fb182c63-5c56-424c-aa6c-25f9ab805440",
+        "timestamp_ms": 1792625966229
+      },
+      {
+        "type": "thinking",
+        "subtype": "delta",
+        "text": " image shows the text",
+        "session_id": "fb182c63-5c56-424c-aa6c-25f9ab805440",
+        "timestamp_ms": 1792625966229
+      },
+      {
+        "type": "thinking",
+        "subtype": "delta",
+        "text": " \"7477AA\". It contains",
+        "session_id": "fb182c63-5c56-424c-aa6c-25f9ab805440",
+        "timestamp_ms": 1792625966329
+      },
+      {
+        "type": "thinking",
+        "subtype": "delta",
+        "text": " one filled red circle",
+        "session_id": "fb182c63-5c56-424c-aa6c-25f9ab805440",
+        "timestamp_ms": 1792625966329
+      },
+      {
+        "type": "thinking",
+        "subtype": "delta",
+        "text": " and one green inverted",
+        "session_id": "fb182c63-5c56-424c-aa6c-25f9ab805440",
+        "timestamp_ms": 1792625966329
+      },
+      {
+        "type": "thinking",
+        "subtype": "delta",
+        "text": " triangle.",
+        "session_id": "fb182c63-5c56-424c-aa6c-25f9ab805440",
+        "timestamp_ms": 1792625966330
+      },
+      {
+        "type": "thinking",
+        "subtype": "completed",
+        "session_id": "fb182c63-5c56-424c-aa6c-25f9ab805440",
+        "timestamp_ms": 1792625967273
+      },
+      {
+        "type": "assistant",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "```json\n{\"text\":\"7477AA\",\"shapes\":[{\"kind\":\"circle\",\"count\":1},{\"kind\":\"triangle\",\"count\":1}]}"
+            }
+          ]
+        },
+        "session_id": "fb182c63-5c56-424c-aa6c-25f9ab805440",
+        "timestamp_ms": 1792625967273
+      },
+      {
+        "type": "assistant",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "\n```"
+            }
+          ]
+        },
+        "session_id": "fb182c63-5c56-424c-aa6c-25f9ab805440",
+        "timestamp_ms": 1792625967281
+      },
+      {
+        "type": "assistant",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "```json\n{\"text\":\"7477AA\",\"shapes\":[{\"kind\":\"circle\",\"count\":1},{\"kind\":\"triangle\",\"count\":1}]}\n```"
+            }
+          ]
+        },
+        "session_id": "fb182c63-5c56-424c-aa6c-25f9ab805440"
+      },
+      {
+        "type": "result",
+        "subtype": "success",
+        "duration_ms": 4783,
+        "duration_api_ms": 4783,
+        "is_error": false,
+        "result": "我先查看 `probe.png` 里实际画了什么，再按你要求的 JSON 格式回报文字和图形数量。```json\n{\"text\":\"7477AA\",\"shapes\":[{\"kind\":\"circle\",\"count\":1},{\"kind\":\"triangle\",\"count\":1}]}\n```",
+        "session_id": "fb182c63-5c56-424c-aa6c-25f9ab805440",
+        "request_id": "81e419b8-2c03-430e-b9e4-accc9c84e9e7",
+        "usage": {
+          "inputTokens": 15078,
+          "outputTokens": 508,
+          "cacheReadTokens": 14528,
+          "cacheWriteTokens": 0
+        }
+      }
+    ]
+  }
+}

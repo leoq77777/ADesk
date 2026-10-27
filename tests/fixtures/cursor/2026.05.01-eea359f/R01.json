@@ -1,0 +1,134 @@
+{
+  "id": "R01",
+  "status": "通过",
+  "expected": "probe 后短消息成功，保存结构化输出和 provider session ID",
+  "actual": "session_id=1a0c6ec1-9acd-4e4e-8eaf-5786bf36b81f; reply contains pong; exit=0",
+  "recorded_at": "2026-10-21T23:37:17Z",
+  "session_id": "1a0c6ec1-9acd-4e4e-8eaf-5786bf36b81f",
+  "workspace": "<temp>",
+  "invocation": {
+    "argv": [
+      "~/.local/bin/agent",
+      "-p",
+      "--output-format",
+      "stream-json",
+      "--stream-partial-output",
+      "--trust",
+      "--workspace",
+      "/var/folders/d6/slzf66jj5jd79kp_cmqmmnv40000gn/T/de<redacted>",
+      "Reply with exactly the single word pong and nothing else."
+    ],
+    "exit_code": 0,
+    "seconds": 3.49,
+    "cancelled": false,
+    "session_id": "1a0c6ec1-9acd-4e4e-8eaf-5786bf36b81f",
+    "result_text": "pong",
+    "event_types": [
+      "system",
+      "user",
+      "thinking",
+      "thinking",
+      "thinking",
+      "thinking",
+      "assistant",
+      "assistant",
+      "result"
+    ],
+    "stdout": "{\"type\":\"system\",\"subtype\":\"init\",\"apiKeySource\":\"login\",\"cwd\":\"/private<path>\",\"session_id\":\"1a0c6ec1-9acd-4e4e-8eaf-5786bf36b81f\",\"model\":\"Auto\",\"permissionMode\":\"default\"}\n{\"type\":\"user\",\"message\":{\"role\":\"user\",\"content\":[{\"type\":\"text\",\"text\":\"Reply with exactly the single word pong and nothing else.\"}]},\"session_id\":\"1a0c6ec1-9acd-4e4e-8eaf-5786bf36b81f\"}\n{\"type\":\"thinking\",\"subtype\":\"delta\",\"text\":\"I\",\"session_id\":\"1a0c6ec1-9acd-4e4e-8eaf-5786bf36b81f\",\"timestamp_ms\":1792625836972}\n{\"type\":\"thinking\",\"subtype\":\"delta\",\"text\":\" will reply with exactly\",\"session_id\":\"1a0c6ec1-9acd-4e4e-8eaf-5786bf36b81f\",\"timestamp_ms\":1792625837102}\n{\"type\":\"thinking\",\"subtype\":\"delta\",\"text\":\" the word \\\"pong\\\".\",\"session_id\":\"1a0c6ec1-9acd-4e4e-8eaf-5786bf36b81f\",\"timestamp_ms\":1792625837102}\n{\"type\":\"thinking\",\"subtype\":\"completed\",\"session_id\":\"1a0c6ec1-9acd-4e4e-8eaf-5786bf36b81f\",\"timestamp_ms\":1792625837157}\n{\"type\":\"assistant\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"pong\"}]},\"session_id\":\"1a0c6ec1-9acd-4e4e-8eaf-5786bf36b81f\",\"timestamp_ms\":1792625837159}\n{\"type\":\"assistant\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"pong\"}]},\"session_id\":\"1a0c6ec1-9acd-4e4e-8eaf-5786bf36b81f\"}\n{\"type\":\"result\",\"subtype\":\"success\",\"duration_ms\":2474,\"duration_api_ms\":2474,\"is_error\":false,\"result\":\"pong\",\"session_id\":\"1a0c6ec1-9acd-4e4e-8eaf-5786bf36b81f\",\"request_id\":\"3bee63ba-0d37-4299-bc14-f6c36aa351ba\",\"usage\":{\"inputTokens\":14477,\"outputTokens\":111,\"cacheReadTokens\":0,\"cacheWriteTokens\":0}}\n",
+    "stderr": "",
+    "events": [
+      {
+        "type": "system",
+        "subtype": "init",
+        "apiKeySource": "login",
+        "cwd": "/private<path>",
+        "session_id": "1a0c6ec1-9acd-4e4e-8eaf-5786bf36b81f",
+        "model": "Auto",
+        "permissionMode": "default"
+      },
+      {
+        "type": "user",
+        "message": {
+          "role": "user",
+          "content": [
+            {
+              "type": "text",
+              "text": "Reply with exactly the single word pong and nothing else."
+            }
+          ]
+        },
+        "session_id": "1a0c6ec1-9acd-4e4e-8eaf-5786bf36b81f"
+      },
+      {
+        "type": "thinking",
+        "subtype": "delta",
+        "text": "I",
+        "session_id": "1a0c6ec1-9acd-4e4e-8eaf-5786bf36b81f",
+        "timestamp_ms": 1792625836972
+      },
+      {
+        "type": "thinking",
+        "subtype": "delta",
+        "text": " will reply with exactly",
+        "session_id": "1a0c6ec1-9acd-4e4e-8eaf-5786bf36b81f",
+        "timestamp_ms": 1792625837102
+      },
+      {
+        "type": "thinking",
+        "subtype": "delta",
+        "text": " the word \"pong\".",
+        "session_id": "1a0c6ec1-9acd-4e4e-8eaf-5786bf36b81f",
+        "timestamp_ms": 1792625837102
+      },
+      {
+        "type": "thinking",
+        "subtype": "completed",
+        "session_id": "1a0c6ec1-9acd-4e4e-8eaf-5786bf36b81f",
+        "timestamp_ms": 1792625837157
+      },
+      {
+        "type": "assistant",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "pong"
+            }
+          ]
+        },
+        "session_id": "1a0c6ec1-9acd-4e4e-8eaf-5786bf36b81f",
+        "timestamp_ms": 1792625837159
+      },
+      {
+        "type": "assistant",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "pong"
+            }
+          ]
+        },
+        "session_id": "1a0c6ec1-9acd-4e4e-8eaf-5786bf36b81f"
+      },
+      {
+        "type": "result",
+        "subtype": "success",
+        "duration_ms": 2474,
+        "duration_api_ms": 2474,
+        "is_error": false,
+        "result": "pong",
+        "session_id": "1a0c6ec1-9acd-4e4e-8eaf-5786bf36b81f",
+        "request_id": "3bee63ba-0d37-4299-bc14-f6c36aa351ba",
+        "usage": {
+          "inputTokens": 14477,
+          "outputTokens": 111,
+          "cacheReadTokens": 0,
+          "cacheWriteTokens": 0
+        }
+      }
+    ]
+  }
+}

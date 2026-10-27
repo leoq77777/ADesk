@@ -1,0 +1,846 @@
+{
+  "id": "R03",
+  "status": "通过",
+  "expected": "两员工各自返回正确标记，CLI ID 与消息不串线",
+  "actual": "sid_a=55945c8e-9088-41ce-9d19-54ecae872427; sid_b=81cb709b-e244-4342-9dde-5ad0b75c63f5; crossed=False; a='M0A-QEPGNP'; b='M0B-28KC89'",
+  "recorded_at": "2026-10-21T23:37:42Z",
+  "employee_a": {
+    "session_id": "55945c8e-9088-41ce-9d19-54ecae872427",
+    "first": {
+      "argv": [
+        "~/.local/bin/agent",
+        "-p",
+        "--output-format",
+        "stream-json",
+        "--stream-partial-output",
+        "--trust",
+        "--workspace",
+        "/var/folders/d6/slzf66jj5jd79kp_cmqmmnv40000gn/T/de<redacted>",
+        "--force",
+        "Remember only this employee-A marker and write it to a.txt: M0A-QEPGNP"
+      ],
+      "exit_code": 0,
+      "seconds": 5.33,
+      "cancelled": false,
+      "session_id": "55945c8e-9088-41ce-9d19-54ecae872427",
+      "result_text": "我会把这个 employee-A 标记写入 `a.txt`。已将 employee-A 标记 `M0A-QEPGNP` 写入 `a.txt`。",
+      "event_types": [
+        "system",
+        "user",
+        "thinking",
+        "thinking",
+        "thinking",
+        "thinking",
+        "thinking",
+        "assistant",
+        "assistant",
+        "assistant",
+        "tool_call",
+        "tool_call",
+        "thinking",
+        "thinking",
+        "thinking",
+        "thinking",
+        "thinking",
+        "assistant",
+        "assistant",
+        "assistant",
+        "result"
+      ],
+      "stdout": "{\"type\":\"system\",\"subtype\":\"init\",\"apiKeySource\":\"login\",\"cwd\":\"/private<path>\",\"session_id\":\"55945c8e-9088-41ce-9d19-54ecae872427\",\"model\":\"Auto\",\"permissionMode\":\"default\"}\n{\"type\":\"user\",\"message\":{\"role\":\"user\",\"content\":[{\"type\":\"text\",\"text\":\"Remember only this employee-A marker and write it to a.txt: M0A-QEPGNP\"}]},\"session_id\":\"55945c8e-9088-41ce-9d19-54ecae872427\"}\n{\"type\":\"thinking\",\"subtype\":\"delta\",\"text\":\"The\",\"session_id\":\"55945c8e-9088-41ce-9d19-54ecae872427\",\"timestamp_ms\":1792625849723}\n{\"type\":\"thinking\",\"subtype\":\"delta\",\"text\":\" employee-A marker M\",\"session_id\":\"55945c8e-9088-41ce-9d19-54ecae872427\",\"timestamp_ms\":1792625849875}\n{\"type\":\"thinking\",\"subtype\":\"delta\",\"text\":\"0A-QEPGNP will be written\",\"session_id\":\"55945c8e-9088-41ce-9d19-54ecae872427\",\"timestamp_ms\":1792625849877}\n{\"type\":\"thinking\",\"subtype\":\"delta\",\"text\":\" to a.txt.\",\"session_id\":\"55945c8e-9088-41ce-9d19-54ecae872427\",\"timestamp_ms\":1792625849877}\n{\"type\":\"thinking\",\"subtype\":\"completed\",\"session_id\":\"55945c8e-9088-41ce-9d19-54ecae872427\",\"timestamp_ms\":1792625850028}\n{\"type\":\"assistant\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"我会把这个 employee-A \"}]},\"session_id\":\"55945c8e-9088-41ce-9d19-54ecae872427\",\"timestamp_ms\":1792625850029}\n{\"type\":\"assistant\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"标记写入 `a.txt`。\"}]},\"session_id\":\"55945c8e-9088-41ce-9d19-54ecae872427\",\"timestamp_ms\":1792625850182}\n{\"type\":\"assistant\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"我会把这个 employee-A 标记写入 `a.txt`。\"}]},\"session_id\":\"55945c8e-9088-41ce-9d19-54ecae872427\",\"model_call_id\":\"cecef647-6578-4883-8053-1b410bef9f69-0-mrud\",\"timestamp_ms\":1792625850629}\n{\"type\":\"tool_call\",\"subtype\":\"started\",\"call_id\":\"call-80c1501f-9867-4023-8554-53416aa81d25-0\\nfc_p6BD3WP-4SRMt5-d52e2496-aws_ue1_0\",\"tool_call\":{\"editToolCall\":{\"args\":{\"path\":\"<path>/a.txt\",\"streamContent\":\"M0A-QEPGNP\\n\"}}},\"model_call_id\":\"cecef647-6578-4883-8053-1b410bef9f69-0-mrud\",\"session_id\":\"55945c8e-9088-41ce-9d19-54ecae872427\",\"timestamp_ms\":1792625850630}\n{\"type\":\"tool_call\",\"subtype\":\"completed\",\"call_id\":\"call-80c1501f-9867-4023-8554-53416aa81d25-0\\nfc_p6BD3WP-4SRMt5-d52e2496-aws_ue1_0\",\"tool_call\":{\"editToolCall\":{\"args\":{\"path\":\"<path>/a.txt\",\"streamContent\":\"M0A-QEPGNP\\n\"},\"result\":{\"success\":{\"path\":\"<path>/a.txt\",\"linesAdded\":1,\"linesRemoved\":0,\"diffString\":\"--- /dev/null\\n+++ b/<path>/a.txt\\n@@ -1,0 +1 @@\\n+M0A-QEPGNP\",\"afterFullFileContent\":\"M0A-QEPGNP\\n\",\"message\":\"Wrote contents to <path>/a.txt\"}}}},\"model_call_id\":\"cecef647-6578-4883-8053-1b410bef9f69-0-mrud\",\"session_id\":\"55945c8e-9088-41ce-9d19-54ecae872427\",\"timestamp_ms\":1792625850709}\n{\"type\":\"thinking\",\"subtype\":\"delta\",\"text\":\"已\",\"session_id\":\"55945c8e-9088-41ce-9d19-54ecae872427\",\"timestamp_ms\":1792625851420}\n{\"type\":\"thinking\",\"subtype\":\"delta\",\"text\":\"成功将 employee-A 标记写入 \",\"session_id\":\"55945c8e-9088-41ce-9d19-54ecae872427\",\"timestamp_ms\":1792625851462}\n{\"type\":\"thinking\",\"subtype\":\"delta\",\"text\":\"a\",\"session_id\":\"55945c8e-9088-41ce-9d19-54ecae872427\",\"timestamp_ms\":1792625851466}\n{\"type\":\"thinking\",\"subtype\":\"delta\",\"text\":\".txt。\",\"session_id\":\"55945c8e-9088-41ce-9d19-54ecae872427\",\"timestamp_ms\":1792625851487}\n{\"type\":\"thinking\",\"subtype\":\"completed\",\"session_id\":\"55945c8e-9088-41ce-9d19-54ecae872427\",\"timestamp_ms\":1792625851487}\n{\"type\":\"assistant\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"已将\"}]},\"session_id\":\"55945c8e-9088-41ce-9d19-54ecae872427\",\"timestamp_ms\":1792625851487}\n{\"type\":\"assistant\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\" employee-A 标记 `M0A-QEPGNP` 写入 `a.txt`。\"}]},\"session_id\":\"55945c8e-9088-41ce-9d19-54ecae872427\",\"timestamp_ms\":1792625851487}\n{\"type\":\"assistant\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"已将 employee-A 标记 `M0A-QEPGNP` 写入 `a.txt`。\"}]},\"session_id\":\"55945c8e-9088-41ce-9d19-54ecae872427\"}\n{\"type\":\"result\",\"subtype\":\"success\",\"duration_ms\":4260,\"duration_api_ms\":4260,\"is_error\":false,\"result\":\"我会把这个 employee-A 标记写入 `a.txt`。已将 employee-A 标记 `M0A-QEPGNP` 写入 `a.txt`。\",\"session_id\":\"55945c8e-9088-41ce-9d19-54ecae872427\",\"request_id\":\"cecef647-6578-4883-8053-1b410bef9f69\",\"usage\":{\"inputTokens\":14800,\"outputTokens\":250,\"cacheReadTokens\":14464,\"cacheWriteTokens\":0}}\n",
+      "stderr": "",
+      "events": [
+        {
+          "type": "system",
+          "subtype": "init",
+          "apiKeySource": "login",
+          "cwd": "/private<path>",
+          "session_id": "55945c8e-9088-41ce-9d19-54ecae872427",
+          "model": "Auto",
+          "permissionMode": "default"
+        },
+        {
+          "type": "user",
+          "message": {
+            "role": "user",
+            "content": [
+              {
+                "type": "text",
+                "text": "Remember only this employee-A marker and write it to a.txt: M0A-QEPGNP"
+              }
+            ]
+          },
+          "session_id": "55945c8e-9088-41ce-9d19-54ecae872427"
+        },
+        {
+          "type": "thinking",
+          "subtype": "delta",
+          "text": "The",
+          "session_id": "55945c8e-9088-41ce-9d19-54ecae872427",
+          "timestamp_ms": 1792625849723
+        },
+        {
+          "type": "thinking",
+          "subtype": "delta",
+          "text": " employee-A marker M",
+          "session_id": "55945c8e-9088-41ce-9d19-54ecae872427",
+          "timestamp_ms": 1792625849875
+        },
+        {
+          "type": "thinking",
+          "subtype": "delta",
+          "text": "0A-QEPGNP will be written",
+          "session_id": "55945c8e-9088-41ce-9d19-54ecae872427",
+          "timestamp_ms": 1792625849877
+        },
+        {
+          "type": "thinking",
+          "subtype": "delta",
+          "text": " to a.txt.",
+          "session_id": "55945c8e-9088-41ce-9d19-54ecae872427",
+          "timestamp_ms": 1792625849877
+        },
+        {
+          "type": "thinking",
+          "subtype": "completed",
+          "session_id": "55945c8e-9088-41ce-9d19-54ecae872427",
+          "timestamp_ms": 1792625850028
+        },
+        {
+          "type": "assistant",
+          "message": {
+            "role": "assistant",
+            "content": [
+              {
+                "type": "text",
+                "text": "我会把这个 employee-A "
+              }
+            ]
+          },
+          "session_id": "55945c8e-9088-41ce-9d19-54ecae872427",
+          "timestamp_ms": 1792625850029
+        },
+        {
+          "type": "assistant",
+          "message": {
+            "role": "assistant",
+            "content": [
+              {
+                "type": "text",
+                "text": "标记写入 `a.txt`。"
+              }
+            ]
+          },
+          "session_id": "55945c8e-9088-41ce-9d19-54ecae872427",
+          "timestamp_ms": 1792625850182
+        },
+        {
+          "type": "assistant",
+          "message": {
+            "role": "assistant",
+            "content": [
+              {
+                "type": "text",
+                "text": "我会把这个 employee-A 标记写入 `a.txt`。"
+              }
+            ]
+          },
+          "session_id": "55945c8e-9088-41ce-9d19-54ecae872427",
+          "model_call_id": "cecef647-6578-4883-8053-1b410bef9f69-0-mrud",
+          "timestamp_ms": 1792625850629
+        },
+        {
+          "type": "tool_call",
+          "subtype": "started",
+          "call_id": "call-80c1501f-9867-4023-8554-53416aa81d25-0\nfc_p6BD3WP-4SRMt5-d52e2496-aws_ue1_0",
+          "tool_call": {
+            "editToolCall": {
+              "args": {
+                "path": "<path>/a.txt",
+                "streamContent": "M0A-QEPGNP\n"
+              }
+            }
+          },
+          "model_call_id": "cecef647-6578-4883-8053-1b410bef9f69-0-mrud",
+          "session_id": "55945c8e-9088-41ce-9d19-54ecae872427",
+          "timestamp_ms": 1792625850630
+        },
+        {
+          "type": "tool_call",
+          "subtype": "completed",
+          "call_id": "call-80c1501f-9867-4023-8554-53416aa81d25-0\nfc_p6BD3WP-4SRMt5-d52e2496-aws_ue1_0",
+          "tool_call": {
+            "editToolCall": {
+              "args": {
+                "path": "<path>/a.txt",
+                "streamContent": "M0A-QEPGNP\n"
+              },
+              "result": {
+                "success": {
+                  "path": "<path>/a.txt",
+                  "linesAdded": 1,
+                  "linesRemoved": 0,
+                  "diffString": "--- /dev/null\n+++ b/<path>/a.txt\n@@ -1,0 +1 @@\n+M0A-QEPGNP",
+                  "afterFullFileContent": "M0A-QEPGNP\n",
+                  "message": "Wrote contents to <path>/a.txt"
+                }
+              }
+            }
+          },
+          "model_call_id": "cecef647-6578-4883-8053-1b410bef9f69-0-mrud",
+          "session_id": "55945c8e-9088-41ce-9d19-54ecae872427",
+          "timestamp_ms": 1792625850709
+        },
+        {
+          "type": "thinking",
+          "subtype": "delta",
+          "text": "已",
+          "session_id": "55945c8e-9088-41ce-9d19-54ecae872427",
+          "timestamp_ms": 1792625851420
+        },
+        {
+          "type": "thinking",
+          "subtype": "delta",
+          "text": "成功将 employee-A 标记写入 ",
+          "session_id": "55945c8e-9088-41ce-9d19-54ecae872427",
+          "timestamp_ms": 1792625851462
+        },
+        {
+          "type": "thinking",
+          "subtype": "delta",
+          "text": "a",
+          "session_id": "55945c8e-9088-41ce-9d19-54ecae872427",
+          "timestamp_ms": 1792625851466
+        },
+        {
+          "type": "thinking",
+          "subtype": "delta",
+          "text": ".txt。",
+          "session_id": "55945c8e-9088-41ce-9d19-54ecae872427",
+          "timestamp_ms": 1792625851487
+        },
+        {
+          "type": "thinking",
+          "subtype": "completed",
+          "session_id": "55945c8e-9088-41ce-9d19-54ecae872427",
+          "timestamp_ms": 1792625851487
+        },
+        {
+          "type": "assistant",
+          "message": {
+            "role": "assistant",
+            "content": [
+              {
+                "type": "text",
+                "text": "已将"
+              }
+            ]
+          },
+          "session_id": "55945c8e-9088-41ce-9d19-54ecae872427",
+          "timestamp_ms": 1792625851487
+        },
+        {
+          "type": "assistant",
+          "message": {
+            "role": "assistant",
+            "content": [
+              {
+                "type": "text",
+                "text": " employee-A 标记 `M0A-QEPGNP` 写入 `a.txt`。"
+              }
+            ]
+          },
+          "session_id": "55945c8e-9088-41ce-9d19-54ecae872427",
+          "timestamp_ms": 1792625851487
+        },
+        {
+          "type": "assistant",
+          "message": {
+            "role": "assistant",
+            "content": [
+              {
+                "type": "text",
+                "text": "已将 employee-A 标记 `M0A-QEPGNP` 写入 `a.txt`。"
+              }
+            ]
+          },
+          "session_id": "55945c8e-9088-41ce-9d19-54ecae872427"
+        },
+        {
+          "type": "result",
+          "subtype": "success",
+          "duration_ms": 4260,
+          "duration_api_ms": 4260,
+          "is_error": false,
+          "result": "我会把这个 employee-A 标记写入 `a.txt`。已将 employee-A 标记 `M0A-QEPGNP` 写入 `a.txt`。",
+          "session_id": "55945c8e-9088-41ce-9d19-54ecae872427",
+          "request_id": "cecef647-6578-4883-8053-1b410bef9f69",
+          "usage": {
+            "inputTokens": 14800,
+            "outputTokens": 250,
+            "cacheReadTokens": 14464,
+            "cacheWriteTokens": 0
+          }
+        }
+      ]
+    },
+    "second": {
+      "argv": [
+        "~/.local/bin/agent",
+        "-p",
+        "--output-format",
+        "stream-json",
+        "--stream-partial-output",
+        "--trust",
+        "--workspace",
+        "/var/folders/d6/slzf66jj5jd79kp_cmqmmnv40000gn/T/de<redacted>",
+        "--resume",
+        "55945c8e-9088-41ce-9d19-54ecae872427",
+        "Reply with only employee-A marker."
+      ],
+      "exit_code": 0,
+      "seconds": 2.68,
+      "cancelled": false,
+      "session_id": "55945c8e-9088-41ce-9d19-54ecae872427",
+      "result_text": "M0A-QEPGNP",
+      "event_types": [
+        "system",
+        "user",
+        "thinking",
+        "thinking",
+        "thinking",
+        "thinking",
+        "thinking",
+        "assistant",
+        "assistant",
+        "assistant",
+        "result"
+      ],
+      "stdout": "{\"type\":\"system\",\"subtype\":\"init\",\"apiKeySource\":\"login\",\"cwd\":\"/private<path>\",\"session_id\":\"55945c8e-9088-41ce-9d19-54ecae872427\",\"model\":\"Auto\",\"permissionMode\":\"default\"}\n{\"type\":\"user\",\"message\":{\"role\":\"user\",\"content\":[{\"type\":\"text\",\"text\":\"Reply with only employee-A marker.\"}]},\"session_id\":\"55945c8e-9088-41ce-9d19-54ecae872427\"}\n{\"type\":\"thinking\",\"subtype\":\"delta\",\"text\":\"I\",\"session_id\":\"55945c8e-9088-41ce-9d19-54ecae872427\",\"timestamp_ms\":1792625859526}\n{\"type\":\"thinking\",\"subtype\":\"delta\",\"text\":\" will reply with only\",\"session_id\":\"55945c8e-9088-41ce-9d19-54ecae872427\",\"timestamp_ms\":1792625859544}\n{\"type\":\"thinking\",\"subtype\":\"delta\",\"text\":\" the employee-A marker\",\"session_id\":\"55945c8e-9088-41ce-9d19-54ecae872427\",\"timestamp_ms\":1792625859561}\n{\"type\":\"thinking\",\"subtype\":\"delta\",\"text\":\" M0A-QEPGNP.\",\"session_id\":\"55945c8e-9088-41ce-9d19-54ecae872427\",\"timestamp_ms\":1792625859612}\n{\"type\":\"thinking\",\"subtype\":\"completed\",\"session_id\":\"55945c8e-9088-41ce-9d19-54ecae872427\",\"timestamp_ms\":1792625859614}\n{\"type\":\"assistant\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"M0A-Q\"}]},\"session_id\":\"55945c8e-9088-41ce-9d19-54ecae872427\",\"timestamp_ms\":1792625859615}\n{\"type\":\"assistant\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"EPGNP\"}]},\"session_id\":\"55945c8e-9088-41ce-9d19-54ecae872427\",\"timestamp_ms\":1792625859618}\n{\"type\":\"assistant\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"M0A-QEPGNP\"}]},\"session_id\":\"55945c8e-9088-41ce-9d19-54ecae872427\"}\n{\"type\":\"result\",\"subtype\":\"success\",\"duration_ms\":1254,\"duration_api_ms\":1254,\"is_error\":false,\"result\":\"M0A-QEPGNP\",\"session_id\":\"55945c8e-9088-41ce-9d19-54ecae872427\",\"request_id\":\"851cd7c2-5691-4ec2-a1f4-d0d7d2599c57\",\"usage\":{\"inputTokens\":136,\"outputTokens\":65,\"cacheReadTokens\":14720,\"cacheWriteTokens\":0}}\n",
+      "stderr": "",
+      "events": [
+        {
+          "type": "system",
+          "subtype": "init",
+          "apiKeySource": "login",
+          "cwd": "/private<path>",
+          "session_id": "55945c8e-9088-41ce-9d19-54ecae872427",
+          "model": "Auto",
+          "permissionMode": "default"
+        },
+        {
+          "type": "user",
+          "message": {
+            "role": "user",
+            "content": [
+              {
+                "type": "text",
+                "text": "Reply with only employee-A marker."
+              }
+            ]
+          },
+          "session_id": "55945c8e-9088-41ce-9d19-54ecae872427"
+        },
+        {
+          "type": "thinking",
+          "subtype": "delta",
+          "text": "I",
+          "session_id": "55945c8e-9088-41ce-9d19-54ecae872427",
+          "timestamp_ms": 1792625859526
+        },
+        {
+          "type": "thinking",
+          "subtype": "delta",
+          "text": " will reply with only",
+          "session_id": "55945c8e-9088-41ce-9d19-54ecae872427",
+          "timestamp_ms": 1792625859544
+        },
+        {
+          "type": "thinking",
+          "subtype": "delta",
+          "text": " the employee-A marker",
+          "session_id": "55945c8e-9088-41ce-9d19-54ecae872427",
+          "timestamp_ms": 1792625859561
+        },
+        {
+          "type": "thinking",
+          "subtype": "delta",
+          "text": " M0A-QEPGNP.",
+          "session_id": "55945c8e-9088-41ce-9d19-54ecae872427",
+          "timestamp_ms": 1792625859612
+        },
+        {
+          "type": "thinking",
+          "subtype": "completed",
+          "session_id": "55945c8e-9088-41ce-9d19-54ecae872427",
+          "timestamp_ms": 1792625859614
+        },
+        {
+          "type": "assistant",
+          "message": {
+            "role": "assistant",
+            "content": [
+              {
+                "type": "text",
+                "text": "M0A-Q"
+              }
+            ]
+          },
+          "session_id": "55945c8e-9088-41ce-9d19-54ecae872427",
+          "timestamp_ms": 1792625859615
+        },
+        {
+          "type": "assistant",
+          "message": {
+            "role": "assistant",
+            "content": [
+              {
+                "type": "text",
+                "text": "EPGNP"
+              }
+            ]
+          },
+          "session_id": "55945c8e-9088-41ce-9d19-54ecae872427",
+          "timestamp_ms": 1792625859618
+        },
+        {
+          "type": "assistant",
+          "message": {
+            "role": "assistant",
+            "content": [
+              {
+                "type": "text",
+                "text": "M0A-QEPGNP"
+              }
+            ]
+          },
+          "session_id": "55945c8e-9088-41ce-9d19-54ecae872427"
+        },
+        {
+          "type": "result",
+          "subtype": "success",
+          "duration_ms": 1254,
+          "duration_api_ms": 1254,
+          "is_error": false,
+          "result": "M0A-QEPGNP",
+          "session_id": "55945c8e-9088-41ce-9d19-54ecae872427",
+          "request_id": "851cd7c2-5691-4ec2-a1f4-d0d7d2599c57",
+          "usage": {
+            "inputTokens": 136,
+            "outputTokens": 65,
+            "cacheReadTokens": 14720,
+            "cacheWriteTokens": 0
+          }
+        }
+      ]
+    }
+  },
+  "employee_b": {
+    "session_id": "81cb709b-e244-4342-9dde-5ad0b75c63f5",
+    "first": {
+      "argv": [
+        "~/.local/bin/agent",
+        "-p",
+        "--output-format",
+        "stream-json",
+        "--stream-partial-output",
+        "--trust",
+        "--workspace",
+        "/var/folders/d6/slzf66jj5jd79kp_cmqmmnv40000gn/T/de<redacted>",
+        "--force",
+        "Remember only this employee-B marker and write it to b.txt: M0B-28KC89"
+      ],
+      "exit_code": 0,
+      "seconds": 5.39,
+      "cancelled": false,
+      "session_id": "81cb709b-e244-4342-9dde-5ad0b75c63f5",
+      "result_text": "我会把这个 employee-B 标记写入 `b.txt`。已将 employee-B 标记写入 `b.txt`：`M0B-28KC89`。",
+      "event_types": [
+        "system",
+        "user",
+        "thinking",
+        "thinking",
+        "thinking",
+        "thinking",
+        "thinking",
+        "assistant",
+        "assistant",
+        "assistant",
+        "tool_call",
+        "tool_call",
+        "thinking",
+        "thinking",
+        "thinking",
+        "thinking",
+        "assistant",
+        "assistant",
+        "result"
+      ],
+      "stdout": "{\"type\":\"system\",\"subtype\":\"init\",\"apiKeySource\":\"login\",\"cwd\":\"/private<path>\",\"session_id\":\"81cb709b-e244-4342-9dde-5ad0b75c63f5\",\"model\":\"Auto\",\"permissionMode\":\"default\"}\n{\"type\":\"user\",\"message\":{\"role\":\"user\",\"content\":[{\"type\":\"text\",\"text\":\"Remember only this employee-B marker and write it to b.txt: M0B-28KC89\"}]},\"session_id\":\"81cb709b-e244-4342-9dde-5ad0b75c63f5\"}\n{\"type\":\"thinking\",\"subtype\":\"delta\",\"text\":\"Writing\",\"session_id\":\"81cb709b-e244-4342-9dde-5ad0b75c63f5\",\"timestamp_ms\":1792625855793}\n{\"type\":\"thinking\",\"subtype\":\"delta\",\"text\":\" the employee-B marker\",\"session_id\":\"81cb709b-e244-4342-9dde-5ad0b75c63f5\",\"timestamp_ms\":1792625855793}\n{\"type\":\"thinking\",\"subtype\":\"delta\",\"text\":\" M0B-28KC89 to b.txt\",\"session_id\":\"81cb709b-e244-4342-9dde-5ad0b75c63f5\",\"timestamp_ms\":1792625855793}\n{\"type\":\"thinking\",\"subtype\":\"delta\",\"text\":\".\",\"session_id\":\"81cb709b-e244-4342-9dde-5ad0b75c63f5\",\"timestamp_ms\":1792625855793}\n{\"type\":\"thinking\",\"subtype\":\"completed\",\"session_id\":\"81cb709b-e244-4342-9dde-5ad0b75c63f5\",\"timestamp_ms\":1792625855794}\n{\"type\":\"assistant\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"我会\"}]},\"session_id\":\"81cb709b-e244-4342-9dde-5ad0b75c63f5\",\"timestamp_ms\":1792625855794}\n{\"type\":\"assistant\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"把这个 employee-B 标记写入 `b.txt`。\"}]},\"session_id\":\"81cb709b-e244-4342-9dde-5ad0b75c63f5\",\"timestamp_ms\":1792625855795}\n{\"type\":\"assistant\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"我会把这个 employee-B 标记写入 `b.txt`。\"}]},\"session_id\":\"81cb709b-e244-4342-9dde-5ad0b75c63f5\",\"model_call_id\":\"da947a2f-0295-40cd-88cb-8324f6b5c9df-0-fk6q\",\"timestamp_ms\":1792625855933}\n{\"type\":\"tool_call\",\"subtype\":\"started\",\"call_id\":\"call-e00f5beb-9e31-4e71-8c3b-0a6518712650-0\\nfc_p6BD5Mp-4SRMt5-ba141f2f-aws_ue1_0\",\"tool_call\":{\"editToolCall\":{\"args\":{\"path\":\"<path>/b.txt\",\"streamContent\":\"M0B-28KC89\\n\"}}},\"model_call_id\":\"da947a2f-0295-40cd-88cb-8324f6b5c9df-0-fk6q\",\"session_id\":\"81cb709b-e244-4342-9dde-5ad0b75c63f5\",\"timestamp_ms\":1792625855933}\n{\"type\":\"tool_call\",\"subtype\":\"completed\",\"call_id\":\"call-e00f5beb-9e31-4e71-8c3b-0a6518712650-0\\nfc_p6BD5Mp-4SRMt5-ba141f2f-aws_ue1_0\",\"tool_call\":{\"editToolCall\":{\"args\":{\"path\":\"<path>/b.txt\",\"streamContent\":\"M0B-28KC89\\n\"},\"result\":{\"success\":{\"path\":\"<path>/b.txt\",\"linesAdded\":1,\"linesRemoved\":0,\"diffString\":\"--- /dev/null\\n+++ b/<path>/b.txt\\n@@ -1,0 +1 @@\\n+M0B-28KC89\",\"afterFullFileContent\":\"M0B-28KC89\\n\",\"message\":\"Wrote contents to <path>/b.txt\"}}}},\"model_call_id\":\"da947a2f-0295-40cd-88cb-8324f6b5c9df-0-fk6q\",\"session_id\":\"81cb709b-e244-4342-9dde-5ad0b75c63f5\",\"timestamp_ms\":1792625856136}\n{\"type\":\"thinking\",\"subtype\":\"delta\",\"text\":\"已\",\"session_id\":\"81cb709b-e244-4342-9dde-5ad0b75c63f5\",\"timestamp_ms\":1792625856772}\n{\"type\":\"thinking\",\"subtype\":\"delta\",\"text\":\"成功将员工标记 M0B-28KC89 写\",\"session_id\":\"81cb709b-e244-4342-9dde-5ad0b75c63f5\",\"timestamp_ms\":1792625856846}\n{\"type\":\"thinking\",\"subtype\":\"delta\",\"text\":\"入 b.txt。\",\"session_id\":\"81cb709b-e244-4342-9dde-5ad0b75c63f5\",\"timestamp_ms\":1792625856882}\n{\"type\":\"thinking\",\"subtype\":\"completed\",\"session_id\":\"81cb709b-e244-4342-9dde-5ad0b75c63f5\",\"timestamp_ms\":1792625856882}\n{\"type\":\"assistant\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"已将 employee-B 标记写入 `b.txt`：`M0B-28KC89`。\"}]},\"session_id\":\"81cb709b-e244-4342-9dde-5ad0b75c63f5\",\"timestamp_ms\":1792625856882}\n{\"type\":\"assistant\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"已将 employee-B 标记写入 `b.txt`：`M0B-28KC89`。\"}]},\"session_id\":\"81cb709b-e244-4342-9dde-5ad0b75c63f5\"}\n{\"type\":\"result\",\"subtype\":\"success\",\"duration_ms\":3958,\"duration_api_ms\":3958,\"is_error\":false,\"result\":\"我会把这个 employee-B 标记写入 `b.txt`。已将 employee-B 标记写入 `b.txt`：`M0B-28KC89`。\",\"session_id\":\"81cb709b-e244-4342-9dde-5ad0b75c63f5\",\"request_id\":\"da947a2f-0295-40cd-88cb-8324f6b5c9df\",\"usage\":{\"inputTokens\":14748,\"outputTokens\":225,\"cacheReadTokens\":14464,\"cacheWriteTokens\":0}}\n",
+      "stderr": "",
+      "events": [
+        {
+          "type": "system",
+          "subtype": "init",
+          "apiKeySource": "login",
+          "cwd": "/private<path>",
+          "session_id": "81cb709b-e244-4342-9dde-5ad0b75c63f5",
+          "model": "Auto",
+          "permissionMode": "default"
+        },
+        {
+          "type": "user",
+          "message": {
+            "role": "user",
+            "content": [
+              {
+                "type": "text",
+                "text": "Remember only this employee-B marker and write it to b.txt: M0B-28KC89"
+              }
+            ]
+          },
+          "session_id": "81cb709b-e244-4342-9dde-5ad0b75c63f5"
+        },
+        {
+          "type": "thinking",
+          "subtype": "delta",
+          "text": "Writing",
+          "session_id": "81cb709b-e244-4342-9dde-5ad0b75c63f5",
+          "timestamp_ms": 1792625855793
+        },
+        {
+          "type": "thinking",
+          "subtype": "delta",
+          "text": " the employee-B marker",
+          "session_id": "81cb709b-e244-4342-9dde-5ad0b75c63f5",
+          "timestamp_ms": 1792625855793
+        },
+        {
+          "type": "thinking",
+          "subtype": "delta",
+          "text": " M0B-28KC89 to b.txt",
+          "session_id": "81cb709b-e244-4342-9dde-5ad0b75c63f5",
+          "timestamp_ms": 1792625855793
+        },
+        {
+          "type": "thinking",
+          "subtype": "delta",
+          "text": ".",
+          "session_id": "81cb709b-e244-4342-9dde-5ad0b75c63f5",
+          "timestamp_ms": 1792625855793
+        },
+        {
+          "type": "thinking",
+          "subtype": "completed",
+          "session_id": "81cb709b-e244-4342-9dde-5ad0b75c63f5",
+          "timestamp_ms": 1792625855794
+        },
+        {
+          "type": "assistant",
+          "message": {
+            "role": "assistant",
+            "content": [
+              {
+                "type": "text",
+                "text": "我会"
+              }
+            ]
+          },
+          "session_id": "81cb709b-e244-4342-9dde-5ad0b75c63f5",
+          "timestamp_ms": 1792625855794
+        },
+        {
+          "type": "assistant",
+          "message": {
+            "role": "assistant",
+            "content": [
+              {
+                "type": "text",
+                "text": "把这个 employee-B 标记写入 `b.txt`。"
+              }
+            ]
+          },
+          "session_id": "81cb709b-e244-4342-9dde-5ad0b75c63f5",
+          "timestamp_ms": 1792625855795
+        },
+        {
+          "type": "assistant",
+          "message": {
+            "role": "assistant",
+            "content": [
+              {
+                "type": "text",
+                "text": "我会把这个 employee-B 标记写入 `b.txt`。"
+              }
+            ]
+          },
+          "session_id": "81cb709b-e244-4342-9dde-5ad0b75c63f5",
+          "model_call_id": "da947a2f-0295-40cd-88cb-8324f6b5c9df-0-fk6q",
+          "timestamp_ms": 1792625855933
+        },
+        {
+          "type": "tool_call",
+          "subtype": "started",
+          "call_id": "call-e00f5beb-9e31-4e71-8c3b-0a6518712650-0\nfc_p6BD5Mp-4SRMt5-ba141f2f-aws_ue1_0",
+          "tool_call": {
+            "editToolCall": {
+              "args": {
+                "path": "<path>/b.txt",
+                "streamContent": "M0B-28KC89\n"
+              }
+            }
+          },
+          "model_call_id": "da947a2f-0295-40cd-88cb-8324f6b5c9df-0-fk6q",
+          "session_id": "81cb709b-e244-4342-9dde-5ad0b75c63f5",
+          "timestamp_ms": 1792625855933
+        },
+        {
+          "type": "tool_call",
+          "subtype": "completed",
+          "call_id": "call-e00f5beb-9e31-4e71-8c3b-0a6518712650-0\nfc_p6BD5Mp-4SRMt5-ba141f2f-aws_ue1_0",
+          "tool_call": {
+            "editToolCall": {
+              "args": {
+                "path": "<path>/b.txt",
+                "streamContent": "M0B-28KC89\n"
+              },
+              "result": {
+                "success": {
+                  "path": "<path>/b.txt",
+                  "linesAdded": 1,
+                  "linesRemoved": 0,
+                  "diffString": "--- /dev/null\n+++ b/<path>/b.txt\n@@ -1,0 +1 @@\n+M0B-28KC89",
+                  "afterFullFileContent": "M0B-28KC89\n",
+                  "message": "Wrote contents to <path>/b.txt"
+                }
+              }
+            }
+          },
+          "model_call_id": "da947a2f-0295-40cd-88cb-8324f6b5c9df-0-fk6q",
+          "session_id": "81cb709b-e244-4342-9dde-5ad0b75c63f5",
+          "timestamp_ms": 1792625856136
+        },
+        {
+          "type": "thinking",
+          "subtype": "delta",
+          "text": "已",
+          "session_id": "81cb709b-e244-4342-9dde-5ad0b75c63f5",
+          "timestamp_ms": 1792625856772
+        },
+        {
+          "type": "thinking",
+          "subtype": "delta",
+          "text": "成功将员工标记 M0B-28KC89 写",
+          "session_id": "81cb709b-e244-4342-9dde-5ad0b75c63f5",
+          "timestamp_ms": 1792625856846
+        },
+        {
+          "type": "thinking",
+          "subtype": "delta",
+          "text": "入 b.txt。",
+          "session_id": "81cb709b-e244-4342-9dde-5ad0b75c63f5",
+          "timestamp_ms": 1792625856882
+        },
+        {
+          "type": "thinking",
+          "subtype": "completed",
+          "session_id": "81cb709b-e244-4342-9dde-5ad0b75c63f5",
+          "timestamp_ms": 1792625856882
+        },
+        {
+          "type": "assistant",
+          "message": {
+            "role": "assistant",
+            "content": [
+              {
+                "type": "text",
+                "text": "已将 employee-B 标记写入 `b.txt`：`M0B-28KC89`。"
+              }
+            ]
+          },
+          "session_id": "81cb709b-e244-4342-9dde-5ad0b75c63f5",
+          "timestamp_ms": 1792625856882
+        },
+        {
+          "type": "assistant",
+          "message": {
+            "role": "assistant",
+            "content": [
+              {
+                "type": "text",
+                "text": "已将 employee-B 标记写入 `b.txt`：`M0B-28KC89`。"
+              }
+            ]
+          },
+          "session_id": "81cb709b-e244-4342-9dde-5ad0b75c63f5"
+        },
+        {
+          "type": "result",
+          "subtype": "success",
+          "duration_ms": 3958,
+          "duration_api_ms": 3958,
+          "is_error": false,
+          "result": "我会把这个 employee-B 标记写入 `b.txt`。已将 employee-B 标记写入 `b.txt`：`M0B-28KC89`。",
+          "session_id": "81cb709b-e244-4342-9dde-5ad0b75c63f5",
+          "request_id": "da947a2f-0295-40cd-88cb-8324f6b5c9df",
+          "usage": {
+            "inputTokens": 14748,
+            "outputTokens": 225,
+            "cacheReadTokens": 14464,
+            "cacheWriteTokens": 0
+          }
+        }
+      ]
+    },
+    "second": {
+      "argv": [
+        "~/.local/bin/agent",
+        "-p",
+        "--output-format",
+        "stream-json",
+        "--stream-partial-output",
+        "--trust",
+        "--workspace",
+        "/var/folders/d6/slzf66jj5jd79kp_cmqmmnv40000gn/T/de<redacted>",
+        "--resume",
+        "81cb709b-e244-4342-9dde-5ad0b75c63f5",
+        "Reply with only employee-B marker."
+      ],
+      "exit_code": 0,
+      "seconds": 2.46,
+      "cancelled": false,
+      "session_id": "81cb709b-e244-4342-9dde-5ad0b75c63f5",
+      "result_text": "M0B-28KC89",
+      "event_types": [
+        "system",
+        "user",
+        "thinking",
+        "thinking",
+        "thinking",
+        "thinking",
+        "thinking",
+        "assistant",
+        "assistant",
+        "assistant",
+        "result"
+      ],
+      "stdout": "{\"type\":\"system\",\"subtype\":\"init\",\"apiKeySource\":\"login\",\"cwd\":\"/private<path>\",\"session_id\":\"81cb709b-e244-4342-9dde-5ad0b75c63f5\",\"model\":\"Auto\",\"permissionMode\":\"default\"}\n{\"type\":\"user\",\"message\":{\"role\":\"user\",\"content\":[{\"type\":\"text\",\"text\":\"Reply with only employee-B marker.\"}]},\"session_id\":\"81cb709b-e244-4342-9dde-5ad0b75c63f5\"}\n{\"type\":\"thinking\",\"subtype\":\"delta\",\"text\":\"I\",\"session_id\":\"81cb709b-e244-4342-9dde-5ad0b75c63f5\",\"timestamp_ms\":1792625861896}\n{\"type\":\"thinking\",\"subtype\":\"delta\",\"text\":\" will reply with only\",\"session_id\":\"81cb709b-e244-4342-9dde-5ad0b75c63f5\",\"timestamp_ms\":1792625861912}\n{\"type\":\"thinking\",\"subtype\":\"delta\",\"text\":\" the employee-B marker\",\"session_id\":\"81cb709b-e244-4342-9dde-5ad0b75c63f5\",\"timestamp_ms\":1792625861929}\n{\"type\":\"thinking\",\"subtype\":\"delta\",\"text\":\" M0B-28KC89.\",\"session_id\":\"81cb709b-e244-4342-9dde-5ad0b75c63f5\",\"timestamp_ms\":1792625861991}\n{\"type\":\"thinking\",\"subtype\":\"completed\",\"session_id\":\"81cb709b-e244-4342-9dde-5ad0b75c63f5\",\"timestamp_ms\":1792625861993}\n{\"type\":\"assistant\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"M0B-28\"}]},\"session_id\":\"81cb709b-e244-4342-9dde-5ad0b75c63f5\",\"timestamp_ms\":1792625861994}\n{\"type\":\"assistant\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"KC89\"}]},\"session_id\":\"81cb709b-e244-4342-9dde-5ad0b75c63f5\",\"timestamp_ms\":1792625861997}\n{\"type\":\"assistant\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"M0B-28KC89\"}]},\"session_id\":\"81cb709b-e244-4342-9dde-5ad0b75c63f5\"}\n{\"type\":\"result\",\"subtype\":\"success\",\"duration_ms\":1380,\"duration_api_ms\":1380,\"is_error\":false,\"result\":\"M0B-28KC89\",\"session_id\":\"81cb709b-e244-4342-9dde-5ad0b75c63f5\",\"request_id\":\"3331945b-bf3a-4b7c-b0d0-842363b4caec\",\"usage\":{\"inputTokens\":354,\"outputTokens\":63,\"cacheReadTokens\":14464,\"cacheWriteTokens\":0}}\n",
+      "stderr": "",
+      "events": [
+        {
+          "type": "system",
+          "subtype": "init",
+          "apiKeySource": "login",
+          "cwd": "/private<path>",
+          "session_id": "81cb709b-e244-4342-9dde-5ad0b75c63f5",
+          "model": "Auto",
+          "permissionMode": "default"
+        },
+        {
+          "type": "user",
+          "message": {
+            "role": "user",
+            "content": [
+              {
+                "type": "text",
+                "text": "Reply with only employee-B marker."
+              }
+            ]
+          },
+          "session_id": "81cb709b-e244-4342-9dde-5ad0b75c63f5"
+        },
+        {
+          "type": "thinking",
+          "subtype": "delta",
+          "text": "I",
+          "session_id": "81cb709b-e244-4342-9dde-5ad0b75c63f5",
+          "timestamp_ms": 1792625861896
+        },
+        {
+          "type": "thinking",
+          "subtype": "delta",
+          "text": " will reply with only",
+          "session_id": "81cb709b-e244-4342-9dde-5ad0b75c63f5",
+          "timestamp_ms": 1792625861912
+        },
+        {
+          "type": "thinking",
+          "subtype": "delta",
+          "text": " the employee-B marker",
+          "session_id": "81cb709b-e244-4342-9dde-5ad0b75c63f5",
+          "timestamp_ms": 1792625861929
+        },
+        {
+          "type": "thinking",
+          "subtype": "delta",
+          "text": " M0B-28KC89.",
+          "session_id": "81cb709b-e244-4342-9dde-5ad0b75c63f5",
+          "timestamp_ms": 1792625861991
+        },
+        {
+          "type": "thinking",
+          "subtype": "completed",
+          "session_id": "81cb709b-e244-4342-9dde-5ad0b75c63f5",
+          "timestamp_ms": 1792625861993
+        },
+        {
+          "type": "assistant",
+          "message": {
+            "role": "assistant",
+            "content": [
+              {
+                "type": "text",
+                "text": "M0B-28"
+              }
+            ]
+          },
+          "session_id": "81cb709b-e244-4342-9dde-5ad0b75c63f5",
+          "timestamp_ms": 1792625861994
+        },
+        {
+          "type": "assistant",
+          "message": {
+            "role": "assistant",
+            "content": [
+              {
+                "type": "text",
+                "text": "KC89"
+              }
+            ]
+          },
+          "session_id": "81cb709b-e244-4342-9dde-5ad0b75c63f5",
+          "timestamp_ms": 1792625861997
+        },
+        {
+          "type": "assistant",
+          "message": {
+            "role": "assistant",
+            "content": [
+              {
+                "type": "text",
+                "text": "M0B-28KC89"
+              }
+            ]
+          },
+          "session_id": "81cb709b-e244-4342-9dde-5ad0b75c63f5"
+        },
+        {
+          "type": "result",
+          "subtype": "success",
+          "duration_ms": 1380,
+          "duration_api_ms": 1380,
+          "is_error": false,
+          "result": "M0B-28KC89",
+          "session_id": "81cb709b-e244-4342-9dde-5ad0b75c63f5",
+          "request_id": "3331945b-bf3a-4b7c-b0d0-842363b4caec",
+          "usage": {
+            "inputTokens": 354,
+            "outputTokens": 63,
+            "cacheReadTokens": 14464,
+            "cacheWriteTokens": 0
+          }
+        }
+      ]
+    }
+  }
+}

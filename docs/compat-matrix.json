@@ -1,0 +1,41 @@
+{
+  "updated_at": "2026-10-21T23:40:02Z",
+  "selected_provider": "cursor-cli",
+  "selection_reason": "开发方案候选为 Gemini CLI 与 Cursor CLI。本机 Gemini 未安装；Cursor CLI 已安装。按本地可用性选定 Cursor CLI 作为 M0 目标。认证未完成前能力不得标为 supported。",
+  "os": "Darwin",
+  "arch": "arm64",
+  "rows": [
+    {
+      "provider": "cursor-cli",
+      "executable": "~/.local/bin/agent",
+      "version": "2026.05.01-eea359f",
+      "auth": "authenticated",
+      "capabilities": {
+        "resume": "supported",
+        "streaming": "supported",
+        "image_input": "supported",
+        "file_reference": "supported",
+        "native_approval": "supported",
+        "writable": "supported",
+        "cancel": "supported",
+        "isolation": "supported"
+      }
+    },
+    {
+      "provider": "gemini-cli",
+      "executable": null,
+      "version": null,
+      "auth": "not_installed",
+      "capabilities": {
+        "resume": "unverified",
+        "streaming": "unverified",
+        "image_input": "unverified",
+        "file_reference": "unverified",
+        "native_approval": "unverified",
+        "writable": "unverified",
+        "cancel": "unverified",
+        "isolation": "unverified"
+      }
+    }
+  ]
+}

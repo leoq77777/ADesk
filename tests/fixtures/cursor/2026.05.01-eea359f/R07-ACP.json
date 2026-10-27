@@ -1,0 +1,80 @@
+{
+  "id": "R07-ACP",
+  "status": "通过",
+  "expected": "ACP session/request_permission 可在原进程阻塞等待",
+  "actual": "permission_seen=True; session_id=0c7baf49-327f-45a6-83c3-d25307b0ea4b; exit=None",
+  "recorded_at": "2026-10-21T23:38:30Z",
+  "acp_log": [
+    {
+      "method": null,
+      "id": 1,
+      "error": null
+    },
+    {
+      "method": null,
+      "id": 2,
+      "error": null
+    },
+    {
+      "method": null,
+      "id": 3,
+      "error": null
+    },
+    {
+      "method": "session/update",
+      "id": null,
+      "error": null
+    },
+    {
+      "method": "session/update",
+      "id": null,
+      "error": null
+    },
+    {
+      "method": "session/update",
+      "id": null,
+      "error": null
+    },
+    {
+      "method": "session/update",
+      "id": null,
+      "error": null
+    },
+    {
+      "method": "session/update",
+      "id": null,
+      "error": null
+    },
+    {
+      "method": "session/update",
+      "id": null,
+      "error": null
+    },
+    {
+      "method": "session/update",
+      "id": null,
+      "error": null
+    },
+    {
+      "method": "session/update",
+      "id": null,
+      "error": null
+    },
+    {
+      "method": "session/update",
+      "id": null,
+      "error": null
+    },
+    {
+      "method": "session/update",
+      "id": null,
+      "error": null
+    },
+    {
+      "method": "session/request_permission",
+      "id": 0,
+      "error": null
+    }
+  ],
+  "classification": "native_approval=supported via agent acp (session/request_permission)"
+}

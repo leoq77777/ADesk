@@ -1,0 +1,12 @@
+[package]
+name = "desk-fake-cli"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+serde_json.workspace = true
+
+[dev-dependencies]
+desk-core = { path = "../desk-core" }
+tokio.workspace = true

@@ -1,0 +1,446 @@
+{
+  "id": "R02",
+  "status": "通过",
+  "expected": "新进程用保存的指定 CLI ID 恢复，不注入旧历史或答案",
+  "actual": "resume=5ddf5634-a18a-41b2-bd01-e15c005d730a; reply='M0R02-G02OLJIX'; used_latest=False",
+  "recorded_at": "2026-10-21T23:37:26Z",
+  "marker": "M0R02-G02OLJIX",
+  "first": {
+    "argv": [
+      "~/.local/bin/agent",
+      "-p",
+      "--output-format",
+      "stream-json",
+      "--stream-partial-output",
+      "--trust",
+      "--workspace",
+      "/var/folders/d6/slzf66jj5jd79kp_cmqmmnv40000gn/T/de<redacted>",
+      "--force",
+      "Store this exact marker in your session memory and also write it to marker.txt: M0R02-G02OLJIX. Then reply with the word saved."
+    ],
+    "exit_code": 0,
+    "seconds": 6.17,
+    "cancelled": false,
+    "session_id": "5ddf5634-a18a-41b2-bd01-e15c005d730a",
+    "result_text": "我会把这个标记写入 `marker.txt`，并在本会话中记住它。saved",
+    "event_types": [
+      "system",
+      "user",
+      "thinking",
+      "thinking",
+      "thinking",
+      "thinking",
+      "thinking",
+      "thinking",
+      "thinking",
+      "assistant",
+      "assistant",
+      "assistant",
+      "tool_call",
+      "tool_call",
+      "thinking",
+      "thinking",
+      "thinking",
+      "thinking",
+      "thinking",
+      "thinking",
+      "thinking",
+      "thinking",
+      "assistant",
+      "assistant",
+      "result"
+    ],
+    "stdout": "{\"type\":\"system\",\"subtype\":\"init\",\"apiKeySource\":\"login\",\"cwd\":\"/private<path>\",\"session_id\":\"5ddf5634-a18a-41b2-bd01-e15c005d730a\",\"model\":\"Auto\",\"permissionMode\":\"default\"}\n{\"type\":\"user\",\"message\":{\"role\":\"user\",\"content\":[{\"type\":\"text\",\"text\":\"Store this exact marker in your session memory and also write it to marker.txt: M0R02-G02OLJIX. Then reply with the word saved.\"}]},\"session_id\":\"5ddf5634-a18a-41b2-bd01-e15c005d730a\"}\n{\"type\":\"thinking\",\"subtype\":\"delta\",\"text\":\"Writing\",\"session_id\":\"5ddf5634-a18a-41b2-bd01-e15c005d730a\",\"timestamp_ms\":1792625840825}\n{\"type\":\"thinking\",\"subtype\":\"delta\",\"text\":\" the marker to marker\",\"session_id\":\"5ddf5634-a18a-41b2-bd01-e15c005d730a\",\"timestamp_ms\":1792625840825}\n{\"type\":\"thinking\",\"subtype\":\"delta\",\"text\":\".txt and storing it \",\"session_id\":\"5ddf5634-a18a-41b2-bd01-e15c005d730a\",\"timestamp_ms\":1792625840825}\n{\"type\":\"thinking\",\"subtype\":\"delta\",\"text\":\"in\",\"session_id\":\"5ddf5634-a18a-41b2-bd01-e15c005d730a\",\"timestamp_ms\":1792625840825}\n{\"type\":\"thinking\",\"subtype\":\"delta\",\"text\":\" session memory. Will\",\"session_id\":\"5ddf5634-a18a-41b2-bd01-e15c005d730a\",\"timestamp_ms\":1792625840959}\n{\"type\":\"thinking\",\"subtype\":\"delta\",\"text\":\" reply with \\\"saved\\\".\",\"session_id\":\"5ddf5634-a18a-41b2-bd01-e15c005d730a\",\"timestamp_ms\":1792625840961}\n{\"type\":\"thinking\",\"subtype\":\"completed\",\"session_id\":\"5ddf5634-a18a-41b2-bd01-e15c005d730a\",\"timestamp_ms\":1792625841347}\n{\"type\":\"assistant\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"我会把这个标记写入 `marker.txt`\"}]},\"session_id\":\"5ddf5634-a18a-41b2-bd01-e15c005d730a\",\"timestamp_ms\":1792625841349}\n{\"type\":\"assistant\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"，并在本会话中记住它。\"}]},\"session_id\":\"5ddf5634-a18a-41b2-bd01-e15c005d730a\",\"timestamp_ms\":1792625841478}\n{\"type\":\"assistant\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"我会把这个标记写入 `marker.txt`，并在本会话中记住它。\"}]},\"session_id\":\"5ddf5634-a18a-41b2-bd01-e15c005d730a\",\"model_call_id\":\"c37c6068-e330-4c4a-a946-a46d0d2902c0-0-mshu\",\"timestamp_ms\":1792625841873}\n{\"type\":\"tool_call\",\"subtype\":\"started\",\"call_id\":\"call-574a28f4-4871-4a2e-bbff-0cd8655e6327-0\\nfc_p6BCzz9-4SRMt5-68bb5aa1-aws_ue1_0\",\"tool_call\":{\"editToolCall\":{\"args\":{\"path\":\"<path>/marker.txt\",\"streamContent\":\"M0R02-G02OLJIX\\n\"}}},\"model_call_id\":\"c37c6068-e330-4c4a-a946-a46d0d2902c0-0-mshu\",\"session_id\":\"5ddf5634-a18a-41b2-bd01-e15c005d730a\",\"timestamp_ms\":1792625841873}\n{\"type\":\"tool_call\",\"subtype\":\"completed\",\"call_id\":\"call-574a28f4-4871-4a2e-bbff-0cd8655e6327-0\\nfc_p6BCzz9-4SRMt5-68bb5aa1-aws_ue1_0\",\"tool_call\":{\"editToolCall\":{\"args\":{\"path\":\"<path>/marker.txt\",\"streamContent\":\"M0R02-G02OLJIX\\n\"},\"result\":{\"success\":{\"path\":\"<path>/marker.txt\",\"linesAdded\":1,\"linesRemoved\":0,\"diffString\":\"--- /dev/null\\n+++ b/<path>/marker.txt\\n@@ -1,0 +1 @@\\n+M0R02-G02OLJIX\",\"afterFullFileContent\":\"M0R02-G02OLJIX\\n\",\"message\":\"Wrote contents to <path>/marker.txt\"}}}},\"model_call_id\":\"c37c6068-e330-4c4a-a946-a46d0d2902c0-0-mshu\",\"session_id\":\"5ddf5634-a18a-41b2-bd01-e15c005d730a\",\"timestamp_ms\":1792625841967}\n{\"type\":\"thinking\",\"subtype\":\"delta\",\"text\":\"The\",\"session_id\":\"5ddf5634-a18a-41b2-bd01-e15c005d730a\",\"timestamp_ms\":1792625843375}\n{\"type\":\"thinking\",\"subtype\":\"delta\",\"text\":\" marker was saved to\",\"session_id\":\"5ddf5634-a18a-41b2-bd01-e15c005d730a\",\"timestamp_ms\":1792625843393}\n{\"type\":\"thinking\",\"subtype\":\"delta\",\"text\":\" session memory and \",\"session_id\":\"5ddf5634-a18a-41b2-bd01-e15c005d730a\",\"timestamp_ms\":1792625843413}\n{\"type\":\"thinking\",\"subtype\":\"delta\",\"text\":\"written\",\"session_id\":\"5ddf5634-a18a-41b2-bd01-e15c005d730a\",\"timestamp_ms\":1792625843413}\n{\"type\":\"thinking\",\"subtype\":\"delta\",\"text\":\" to marker.txt. The \",\"session_id\":\"5ddf5634-a18a-41b2-bd01-e15c005d730a\",\"timestamp_ms\":1792625843439}\n{\"type\":\"thinking\",\"subtype\":\"delta\",\"text\":\"reply\",\"session_id\":\"5ddf5634-a18a-41b2-bd01-e15c005d730a\",\"timestamp_ms\":1792625843441}\n{\"type\":\"thinking\",\"subtype\":\"delta\",\"text\":\" is \\\"saved\\\".\",\"session_id\":\"5ddf5634-a18a-41b2-bd01-e15c005d730a\",\"timestamp_ms\":1792625843474}\n{\"type\":\"thinking\",\"subtype\":\"completed\",\"session_id\":\"5ddf5634-a18a-41b2-bd01-e15c005d730a\",\"timestamp_ms\":1792625843474}\n{\"type\":\"assistant\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"saved\"}]},\"session_id\":\"5ddf5634-a18a-41b2-bd01-e15c005d730a\",\"timestamp_ms\":1792625843474}\n{\"type\":\"assistant\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"saved\"}]},\"session_id\":\"5ddf5634-a18a-41b2-bd01-e15c005d730a\"}\n{\"type\":\"result\",\"subtype\":\"success\",\"duration_ms\":4687,\"duration_api_ms\":4687,\"is_error\":false,\"result\":\"我会把这个标记写入 `marker.txt`，并在本会话中记住它。saved\",\"session_id\":\"5ddf5634-a18a-41b2-bd01-e15c005d730a\",\"request_id\":\"c37c6068-e330-4c4a-a946-a46d0d2902c0\",\"usage\":{\"inputTokens\":14849,\"outputTokens\":316,\"cacheReadTokens\":14464,\"cacheWriteTokens\":0}}\n",
+    "stderr": "",
+    "events": [
+      {
+        "type": "system",
+        "subtype": "init",
+        "apiKeySource": "login",
+        "cwd": "/private<path>",
+        "session_id": "5ddf5634-a18a-41b2-bd01-e15c005d730a",
+        "model": "Auto",
+        "permissionMode": "default"
+      },
+      {
+        "type": "user",
+        "message": {
+          "role": "user",
+          "content": [
+            {
+              "type": "text",
+              "text": "Store this exact marker in your session memory and also write it to marker.txt: M0R02-G02OLJIX. Then reply with the word saved."
+            }
+          ]
+        },
+        "session_id": "5ddf5634-a18a-41b2-bd01-e15c005d730a"
+      },
+      {
+        "type": "thinking",
+        "subtype": "delta",
+        "text": "Writing",
+        "session_id": "5ddf5634-a18a-41b2-bd01-e15c005d730a",
+        "timestamp_ms": 1792625840825
+      },
+      {
+        "type": "thinking",
+        "subtype": "delta",
+        "text": " the marker to marker",
+        "session_id": "5ddf5634-a18a-41b2-bd01-e15c005d730a",
+        "timestamp_ms": 1792625840825
+      },
+      {
+        "type": "thinking",
+        "subtype": "delta",
+        "text": ".txt and storing it ",
+        "session_id": "5ddf5634-a18a-41b2-bd01-e15c005d730a",
+        "timestamp_ms": 1792625840825
+      },
+      {
+        "type": "thinking",
+        "subtype": "delta",
+        "text": "in",
+        "session_id": "5ddf5634-a18a-41b2-bd01-e15c005d730a",
+        "timestamp_ms": 1792625840825
+      },
+      {
+        "type": "thinking",
+        "subtype": "delta",
+        "text": " session memory. Will",
+        "session_id": "5ddf5634-a18a-41b2-bd01-e15c005d730a",
+        "timestamp_ms": 1792625840959
+      },
+      {
+        "type": "thinking",
+        "subtype": "delta",
+        "text": " reply with \"saved\".",
+        "session_id": "5ddf5634-a18a-41b2-bd01-e15c005d730a",
+        "timestamp_ms": 1792625840961
+      },
+      {
+        "type": "thinking",
+        "subtype": "completed",
+        "session_id": "5ddf5634-a18a-41b2-bd01-e15c005d730a",
+        "timestamp_ms": 1792625841347
+      },
+      {
+        "type": "assistant",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "我会把这个标记写入 `marker.txt`"
+            }
+          ]
+        },
+        "session_id": "5ddf5634-a18a-41b2-bd01-e15c005d730a",
+        "timestamp_ms": 1792625841349
+      },
+      {
+        "type": "assistant",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "，并在本会话中记住它。"
+            }
+          ]
+        },
+        "session_id": "5ddf5634-a18a-41b2-bd01-e15c005d730a",
+        "timestamp_ms": 1792625841478
+      },
+      {
+        "type": "assistant",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "我会把这个标记写入 `marker.txt`，并在本会话中记住它。"
+            }
+          ]
+        },
+        "session_id": "5ddf5634-a18a-41b2-bd01-e15c005d730a",
+        "model_call_id": "c37c6068-e330-4c4a-a946-a46d0d2902c0-0-mshu",
+        "timestamp_ms": 1792625841873
+      },
+      {
+        "type": "tool_call",
+        "subtype": "started",
+        "call_id": "call-574a28f4-4871-4a2e-bbff-0cd8655e6327-0\nfc_p6BCzz9-4SRMt5-68bb5aa1-aws_ue1_0",
+        "tool_call": {
+          "editToolCall": {
+            "args": {
+              "path": "<path>/marker.txt",
+              "streamContent": "M0R02-G02OLJIX\n"
+            }
+          }
+        },
+        "model_call_id": "c37c6068-e330-4c4a-a946-a46d0d2902c0-0-mshu",
+        "session_id": "5ddf5634-a18a-41b2-bd01-e15c005d730a",
+        "timestamp_ms": 1792625841873
+      },
+      {
+        "type": "tool_call",
+        "subtype": "completed",
+        "call_id": "call-574a28f4-4871-4a2e-bbff-0cd8655e6327-0\nfc_p6BCzz9-4SRMt5-68bb5aa1-aws_ue1_0",
+        "tool_call": {
+          "editToolCall": {
+            "args": {
+              "path": "<path>/marker.txt",
+              "streamContent": "M0R02-G02OLJIX\n"
+            },
+            "result": {
+              "success": {
+                "path": "<path>/marker.txt",
+                "linesAdded": 1,
+                "linesRemoved": 0,
+                "diffString": "--- /dev/null\n+++ b/<path>/marker.txt\n@@ -1,0 +1 @@\n+M0R02-G02OLJIX",
+                "afterFullFileContent": "M0R02-G02OLJIX\n",
+                "message": "Wrote contents to <path>/marker.txt"
+              }
+            }
+          }
+        },
+        "model_call_id": "c37c6068-e330-4c4a-a946-a46d0d2902c0-0-mshu",
+        "session_id": "5ddf5634-a18a-41b2-bd01-e15c005d730a",
+        "timestamp_ms": 1792625841967
+      },
+      {
+        "type": "thinking",
+        "subtype": "delta",
+        "text": "The",
+        "session_id": "5ddf5634-a18a-41b2-bd01-e15c005d730a",
+        "timestamp_ms": 1792625843375
+      },
+      {
+        "type": "thinking",
+        "subtype": "delta",
+        "text": " marker was saved to",
+        "session_id": "5ddf5634-a18a-41b2-bd01-e15c005d730a",
+        "timestamp_ms": 1792625843393
+      },
+      {
+        "type": "thinking",
+        "subtype": "delta",
+        "text": " session memory and ",
+        "session_id": "5ddf5634-a18a-41b2-bd01-e15c005d730a",
+        "timestamp_ms": 1792625843413
+      },
+      {
+        "type": "thinking",
+        "subtype": "delta",
+        "text": "written",
+        "session_id": "5ddf5634-a18a-41b2-bd01-e15c005d730a",
+        "timestamp_ms": 1792625843413
+      },
+      {
+        "type": "thinking",
+        "subtype": "delta",
+        "text": " to marker.txt. The ",
+        "session_id": "5ddf5634-a18a-41b2-bd01-e15c005d730a",
+        "timestamp_ms": 1792625843439
+      },
+      {
+        "type": "thinking",
+        "subtype": "delta",
+        "text": "reply",
+        "session_id": "5ddf5634-a18a-41b2-bd01-e15c005d730a",
+        "timestamp_ms": 1792625843441
+      },
+      {
+        "type": "thinking",
+        "subtype": "delta",
+        "text": " is \"saved\".",
+        "session_id": "5ddf5634-a18a-41b2-bd01-e15c005d730a",
+        "timestamp_ms": 1792625843474
+      },
+      {
+        "type": "thinking",
+        "subtype": "completed",
+        "session_id": "5ddf5634-a18a-41b2-bd01-e15c005d730a",
+        "timestamp_ms": 1792625843474
+      },
+      {
+        "type": "assistant",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "saved"
+            }
+          ]
+        },
+        "session_id": "5ddf5634-a18a-41b2-bd01-e15c005d730a",
+        "timestamp_ms": 1792625843474
+      },
+      {
+        "type": "assistant",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "saved"
+            }
+          ]
+        },
+        "session_id": "5ddf5634-a18a-41b2-bd01-e15c005d730a"
+      },
+      {
+        "type": "result",
+        "subtype": "success",
+        "duration_ms": 4687,
+        "duration_api_ms": 4687,
+        "is_error": false,
+        "result": "我会把这个标记写入 `marker.txt`，并在本会话中记住它。saved",
+        "session_id": "5ddf5634-a18a-41b2-bd01-e15c005d730a",
+        "request_id": "c37c6068-e330-4c4a-a946-a46d0d2902c0",
+        "usage": {
+          "inputTokens": 14849,
+          "outputTokens": 316,
+          "cacheReadTokens": 14464,
+          "cacheWriteTokens": 0
+        }
+      }
+    ]
+  },
+  "second": {
+    "argv": [
+      "~/.local/bin/agent",
+      "-p",
+      "--output-format",
+      "stream-json",
+      "--stream-partial-output",
+      "--trust",
+      "--workspace",
+      "/var/folders/d6/slzf66jj5jd79kp_cmqmmnv40000gn/T/de<redacted>",
+      "--resume",
+      "5ddf5634-a18a-41b2-bd01-e15c005d730a",
+      "What marker did I ask you to store in the previous turn? Reply with only that marker. Do not guess."
+    ],
+    "exit_code": 0,
+    "seconds": 2.6,
+    "cancelled": false,
+    "session_id": "5ddf5634-a18a-41b2-bd01-e15c005d730a",
+    "result_text": "M0R02-G02OLJIX",
+    "event_types": [
+      "system",
+      "user",
+      "thinking",
+      "thinking",
+      "thinking",
+      "thinking",
+      "thinking",
+      "assistant",
+      "assistant",
+      "result"
+    ],
+    "stdout": "{\"type\":\"system\",\"subtype\":\"init\",\"apiKeySource\":\"login\",\"cwd\":\"/private<path>\",\"session_id\":\"5ddf5634-a18a-41b2-bd01-e15c005d730a\",\"model\":\"Auto\",\"permissionMode\":\"default\"}\n{\"type\":\"user\",\"message\":{\"role\":\"user\",\"content\":[{\"type\":\"text\",\"text\":\"What marker did I ask you to store in the previous turn? Reply with only that marker. Do not guess.\"}]},\"session_id\":\"5ddf5634-a18a-41b2-bd01-e15c005d730a\"}\n{\"type\":\"thinking\",\"subtype\":\"delta\",\"text\":\"The\",\"session_id\":\"5ddf5634-a18a-41b2-bd01-e15c005d730a\",\"timestamp_ms\":1792625846029}\n{\"type\":\"thinking\",\"subtype\":\"delta\",\"text\":\" marker from the previous\",\"session_id\":\"5ddf5634-a18a-41b2-bd01-e15c005d730a\",\"timestamp_ms\":1792625846090}\n{\"type\":\"thinking\",\"subtype\":\"delta\",\"text\":\" turn was M0R02-G02OL\",\"session_id\":\"5ddf5634-a18a-41b2-bd01-e15c005d730a\",\"timestamp_ms\":1792625846102}\n{\"type\":\"thinking\",\"subtype\":\"delta\",\"text\":\"JIX.\",\"session_id\":\"5ddf5634-a18a-41b2-bd01-e15c005d730a\",\"timestamp_ms\":1792625846135}\n{\"type\":\"thinking\",\"subtype\":\"completed\",\"session_id\":\"5ddf5634-a18a-41b2-bd01-e15c005d730a\",\"timestamp_ms\":1792625846137}\n{\"type\":\"assistant\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"M0R02-G02OLJIX\"}]},\"session_id\":\"5ddf5634-a18a-41b2-bd01-e15c005d730a\",\"timestamp_ms\":1792625846145}\n{\"type\":\"assistant\",\"message\":{\"role\":\"assistant\",\"content\":[{\"type\":\"text\",\"text\":\"M0R02-G02OLJIX\"}]},\"session_id\":\"5ddf5634-a18a-41b2-bd01-e15c005d730a\"}\n{\"type\":\"result\",\"subtype\":\"success\",\"duration_ms\":1275,\"duration_api_ms\":1275,\"is_error\":false,\"result\":\"M0R02-G02OLJIX\",\"session_id\":\"5ddf5634-a18a-41b2-bd01-e15c005d730a\",\"request_id\":\"2612ba03-a94d-4151-8bb3-9df96c7949bb\",\"usage\":{\"inputTokens\":152,\"outputTokens\":90,\"cacheReadTokens\":14784,\"cacheWriteTokens\":0}}\n",
+    "stderr": "",
+    "events": [
+      {
+        "type": "system",
+        "subtype": "init",
+        "apiKeySource": "login",
+        "cwd": "/private<path>",
+        "session_id": "5ddf5634-a18a-41b2-bd01-e15c005d730a",
+        "model": "Auto",
+        "permissionMode": "default"
+      },
+      {
+        "type": "user",
+        "message": {
+          "role": "user",
+          "content": [
+            {
+              "type": "text",
+              "text": "What marker did I ask you to store in the previous turn? Reply with only that marker. Do not guess."
+            }
+          ]
+        },
+        "session_id": "5ddf5634-a18a-41b2-bd01-e15c005d730a"
+      },
+      {
+        "type": "thinking",
+        "subtype": "delta",
+        "text": "The",
+        "session_id": "5ddf5634-a18a-41b2-bd01-e15c005d730a",
+        "timestamp_ms": 1792625846029
+      },
+      {
+        "type": "thinking",
+        "subtype": "delta",
+        "text": " marker from the previous",
+        "session_id": "5ddf5634-a18a-41b2-bd01-e15c005d730a",
+        "timestamp_ms": 1792625846090
+      },
+      {
+        "type": "thinking",
+        "subtype": "delta",
+        "text": " turn was M0R02-G02OL",
+        "session_id": "5ddf5634-a18a-41b2-bd01-e15c005d730a",
+        "timestamp_ms": 1792625846102
+      },
+      {
+        "type": "thinking",
+        "subtype": "delta",
+        "text": "JIX.",
+        "session_id": "5ddf5634-a18a-41b2-bd01-e15c005d730a",
+        "timestamp_ms": 1792625846135
+      },
+      {
+        "type": "thinking",
+        "subtype": "completed",
+        "session_id": "5ddf5634-a18a-41b2-bd01-e15c005d730a",
+        "timestamp_ms": 1792625846137
+      },
+      {
+        "type": "assistant",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "M0R02-G02OLJIX"
+            }
+          ]
+        },
+        "session_id": "5ddf5634-a18a-41b2-bd01-e15c005d730a",
+        "timestamp_ms": 1792625846145
+      },
+      {
+        "type": "assistant",
+        "message": {
+          "role": "assistant",
+          "content": [
+            {
+              "type": "text",
+              "text": "M0R02-G02OLJIX"
+            }
+          ]
+        },
+        "session_id": "5ddf5634-a18a-41b2-bd01-e15c005d730a"
+      },
+      {
+        "type": "result",
+        "subtype": "success",
+        "duration_ms": 1275,
+        "duration_api_ms": 1275,
+        "is_error": false,
+        "result": "M0R02-G02OLJIX",
+        "session_id": "5ddf5634-a18a-41b2-bd01-e15c005d730a",
+        "request_id": "2612ba03-a94d-4151-8bb3-9df96c7949bb",
+        "usage": {
+          "inputTokens": 152,
+          "outputTokens": 90,
+          "cacheReadTokens": 14784,
+          "cacheWriteTokens": 0
+        }
+      }
+    ]
+  }
+}
